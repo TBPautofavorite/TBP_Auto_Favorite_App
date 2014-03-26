@@ -24,6 +24,7 @@ class User extends CActiveRecord
 	{
 		return 'twitter_users';
 	}
+	//THIS WAS ADDED TO ADDRESS THE LACK OF A PRIMARY KEY FOR THE DATABASE
 	public function primaryKey()
 	{
 		return 'id';
