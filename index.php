@@ -1,7 +1,7 @@
 <?php include "protected/extensions/twitteroauth.php"; ?>
 <?php  
-$consumer = "IRwjT5WEXoUALEei4czUg";
-$consumersecret = "UEt6lrKBj5J9tferFwwrniEtmiC983qCNpzA84FiOM";
+$consumer = "wtba5sUW4hYTduVrJi23tw";
+$consumersecret = "hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4";
 //$accesstoken = "1836126486-hud3pfXw9TLRoFE6ajPeSGwNp3ohMv2KHGB8qQI";
 //$accesstokensecret = "zmPf1cQOFfjebsN2JqSJ0itMXeeqsNyWEVZmj76ekXulV";
 
