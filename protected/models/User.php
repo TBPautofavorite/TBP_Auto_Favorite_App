@@ -120,4 +120,42 @@ class User extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
+
+
+
+	/*
+	public function searchTweets()
+
+	{
+
+		if (isset($_POST['keyword']) ) {
+			$tweets = $twitter->get ('https://api.twitter.com/1.1/search/tweets.json?q='.$_POST['keyword'].'&result_type=recent&count=50');
+	 		$hashtags = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q='.$_POST['keyword'].'&result_type=recent&count=3&include_entities=true');
+	 		// This one:
+	 		foreach($tweets as $tweet) {
+	 			foreach($tweet as $t) {
+	 				echo '<img src="'.$t->user->profile_image_url.'" /> '.$t->text .'<br>.';
+	 			}
+	 		}
+	 		// Or this one?:
+	 		//foreach($tweets->statuses as $tweet){
+			//	echo '<img src="'.$tweet->user->profile_image_url.'" /> '.$tweet->text.'<br>';
+			//}﻿
+			// To view hastag photo:
+			foreach ($hashtags->statuses as $tweet) {
+	    		echo "Tweet : ".$tweet->text."<br>";
+	   			//IF ( $tweet->entities->media[0]->media_url) {
+	   			if ($tweet->entities->media[0]->media_url) {
+	   				echo "Media : ".$tweet->entities->media[0]->media_url."<br>";
+	   			}
+	   		}
+	 	}
+
+ 	}
+ 	*/
+
 }
+
+
