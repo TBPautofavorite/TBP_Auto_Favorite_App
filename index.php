@@ -2,8 +2,8 @@
 <?php  
 $consumer = "wtba5sUW4hYTduVrJi23tw";
 $consumersecret = "hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4";
-//$accesstoken = "1836126486-hud3pfXw9TLRoFE6ajPeSGwNp3ohMv2KHGB8qQI";
-//$accesstokensecret = "zmPf1cQOFfjebsN2JqSJ0itMXeeqsNyWEVZmj76ekXulV";
+$accesstoken = "1836126486-zS3oUyOeUuSjrUi3uVPXlwnnFGNTByZJAJAC4iz";
+$accesstokensecret = "nMRgVItg03ZG7Ct4RlPcwRFgNFTrhmiYRX42codP90kD2";
 
 $twitter = new TwitterOAuth($consumer, $consumersecret, $accesstoken, $accesstokensecret);
 
