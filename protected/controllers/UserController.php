@@ -126,6 +126,10 @@ class UserController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		//==============================
+		$callbackurl='http://tbpautofavorite.com/controller/twitterCallBack'; // this is your callback url!!!!
+     	$request_token = $twitter->getRequestToken($callbackurl);
+     	//==============================
 	}
 
 	/**
