@@ -83,7 +83,7 @@ return array(
 			'class' => 'ext.yiitwitteroauth.YiiTwitter',
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
             'consumer_secret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-            'callback' => 'http://www.tbpautofavorite.dev/twitter/callback'
+            'callback' => 'http://www.tbpautofavorite.dev/twitteroauth/callback.php'
 			)
 
 	),

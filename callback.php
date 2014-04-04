@@ -7,7 +7,7 @@
 
 /* Start session and load lib */
 session_start();
-require_once('twitteroauth/twitteroauth.php');
+require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
 require_once('config.php');
 
 /* If the oauth_token is old redirect to the connect page. */
