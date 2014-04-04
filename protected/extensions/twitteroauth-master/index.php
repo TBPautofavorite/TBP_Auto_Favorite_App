@@ -1,14 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title>TBP Auto Favorite App</title>
-</head>
-<body>
-	<h1>TBP Auto Favorite App</h1>
-	<p>&copy;<?php echo date('Y'); ?> tbpautofavorite</p>
-</body>
-</html> -->
-
 <?php
 /**
  * @file
@@ -17,12 +6,12 @@
 
 /* Load required lib files. */
 session_start();
-require_once('protected/extensions/twitteroauth.php');
-require_once('protected/config/config.php');
+require_once('twitteroauth/twitteroauth.php');
+require_once('config.php');
 
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
-    header('Location: protected/extensions/twitteroauth-master/clearsessions.php');
+    header('Location: ./clearsessions.php');
 }
 /* Get user access tokens out of the session. */
 $access_token = $_SESSION['access_token'];

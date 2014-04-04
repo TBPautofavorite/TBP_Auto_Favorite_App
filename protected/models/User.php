@@ -24,7 +24,7 @@ class User extends CActiveRecord
 	{
 		return 'twitter_users';
 	}
-	//THIS WAS ADDED TO ADDRESS THE LACK OF A PRIMARY KEY FOR THE DATABASE
+	// this was added to address the lack of a primary key for the database:
 	public function primaryKey()
 	{
 		return 'id';
@@ -37,7 +37,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, searchtag1', 'required'),
+			array('id, username, password, email, searchtag1', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('username, password, email, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'length', 'max'=>128),
 			// The following rule is used by search().
@@ -157,5 +157,3 @@ class User extends CActiveRecord
  	*/
 
 }
-
-
