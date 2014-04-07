@@ -10,6 +10,33 @@ session_start();
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
 require_once('config.php');
 
+//===================================================
+// Set keys
+$consumerKey = 'wtba5sUW4hYTduVrJi23tw';
+$consumerSecret = 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4';
+$accessToken = '1836126486-AXX1eQCw5gIzBf5yM3H65YmCnAy5il9i5p9tONf';
+$accessTokenSecret = 'MIQKMc5eVOioajDSLSjN1olnQLiIKtrvb9x9FcTEQ4Z6X';
+
+// Create object
+$tweet = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
+
+// Set status message
+$tweetMessage = 'This is a tweet to my Twitter account via PHP.';
+
+// Check for 140 characters
+if(strlen($tweetMessage) <= 140)
+{
+    // Post the status message
+    $tweet->post('statuses/update', array('status' => $tweetMessage));
+}
+
+$retweetResult = $tweet->post('statuses/retweet/'.$postID);
+
+//=====================================================
+
+
+
+
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
     header('Location: clearsessions.php');
@@ -30,6 +57,14 @@ $content = $connection->get('account/verify_credentials');
 //$connection->post('friendships/create', array('id' => 9436992));
 //$connection->post('friendships/destroy', array('id' => 9436992));
 
+//============================================
+/*
+$arr[status]=urlencode("hi, testing api");
+//$connection=getConnectionWithAccessToken("XXX","XXX");
+$content = $connection->get('users/show', array('statuses/update', $arr));
+var_export($connection->http_info);*/
+
+//============================================
 ////////////////
 require_once('config.php');
 if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'CONSUMER_KEY_HERE' || CONSUMER_SECRET === 'CONSUMER_SECRET_HERE') {
@@ -42,7 +77,7 @@ $content = '<a href="./redirect.php"><img src="./images/lighter.png" alt="Sign i
 ///////////// 
 
 
-/* Include HTML to display on the page */
+/* Include HTML to display on the page */ 
 include('html.inc');
 
 ?>

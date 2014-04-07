@@ -117,10 +117,10 @@ class SsoController extends Controller
 				
 				
 				//these are profile feilds (you can probably omit)
-				$twname = explode(" ",$twuser->name);
-				$profile->firstname = $twname[0];//$user_info['first_name'];
-				$profile->lastname =  $twname[1];//$user_info['last_name'];
-				$profile->birthday = "2000-01-01"; 
+				//$twname = explode(" ",$twuser->name);
+				//$profile->firstname = $twname[0];//$user_info['first_name'];
+				//$profile->lastname =  $twname[1];//$user_info['last_name'];
+				//$profile->birthday = "2000-01-01"; 
 				
 
 				//try and save the new user
@@ -149,6 +149,7 @@ class SsoController extends Controller
 				$identity=new UserIdentity("tw_".$twuser->screen_name,$fakepassword);
 				$identity->authenticate();
 				$duration=3600*24*30;
+					//log in for 30 days at a time
 				Yii::app()->user->login($identity,$duration);
 				//e.t. phone home
 				$this->redirect(Yii::app()->homeUrl);

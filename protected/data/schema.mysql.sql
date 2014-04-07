@@ -17,3 +17,13 @@ INSERT INTO twitter_users (username, password, email, oauth_token, oauth_token_s
 INSERT INTO twitter_users (username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6) VALUES ('test2', 'pass2', 'test2@example.com', '789ghi', '012jkl', 'examplesearch1b', 'examplesearch2b', 'examplesearch3b', 'examplesearch4b', 'examplesearch5b', 'examplesearch6b');
 INSERT INTO twitter_users (username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6) VALUES ('test3', 'pass3', 'test3@example.com', '345mno', '678pqr', 'examplesearch1c', 'examplesearch2c', 'examplesearch3c', 'examplesearch4c', 'examplesearch5c', 'examplesearch6c');
 
+
+CREATE TABLE twitter_searchtags (
+    searchtag VARCHAR(128) NOT NULL,
+);
+
+INSERT INTO twitter_searchtags (searchtag) VALUES ('searchtagnumber1');
+INSERT INTO twitter_searchtags (searchtag) VALUES ('searchtagnumber2');
+INSERT INTO twitter_searchtags (searchtag) VALUES ('searchtagnumber3');
+INSERT INTO twitter_searchtags (searchtag) VALUES ('searchtagnumber4');
+INSERT INTO twitter_searchtags (searchtag) VALUES ('searchtagnumber5');

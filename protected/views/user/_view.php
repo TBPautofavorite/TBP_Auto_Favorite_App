@@ -21,10 +21,19 @@
 	<?php echo CHtml::encode($data->email); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('oauth_token')); ?>:</b>
+	<?php echo CHtml::encode($data->oauth_token); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('oauth_token_secret')); ?>:</b>
+	<?php echo CHtml::encode($data->oauth_token_secret); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('searchtag1')); ?>:</b>
 	<?php echo CHtml::encode($data->searchtag1); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('searchtag2')); ?>:</b>
 	<?php echo CHtml::encode($data->searchtag2); ?>
 	<br />
@@ -33,7 +42,6 @@
 	<?php echo CHtml::encode($data->searchtag3); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('searchtag4')); ?>:</b>
 	<?php echo CHtml::encode($data->searchtag4); ?>
 	<br />

@@ -53,6 +53,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
+			//'connectionString' => 'mysql:host=localhost;dbname=twitterAutoFavorite',
 			'connectionString' => 'mysql:host=localhost;dbname=twitterAutoFavorite',
 			'emulatePrepare' => true,
 			'username' => 'root',

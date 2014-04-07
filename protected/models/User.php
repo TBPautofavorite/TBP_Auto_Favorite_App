@@ -39,7 +39,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, username, password, email, searchtag1', 'required'),
+			array('username, password, email, searchtag1', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'length', 'max'=>128),
 			// The following rule is used by search().
@@ -69,8 +69,8 @@ class User extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'email' => 'Email',
-			'oauth_token' => 'oauth_token',
-			'oauth_token_secret' => 'oauth_token_secret',
+			'oauth_token' => 'Oauth Token',
+			'oauth_token_secret' => 'Oauth Token Secret',
 			'searchtag1' => 'Searchtag1',
 			'searchtag2' => 'Searchtag2',
 			'searchtag3' => 'Searchtag3',
@@ -129,8 +129,6 @@ class User extends CActiveRecord
 
 
 
-
-
 	/*
 	public function searchTweets()
 
@@ -162,4 +160,5 @@ class User extends CActiveRecord
  	}
  	*/
 
+	
 }
