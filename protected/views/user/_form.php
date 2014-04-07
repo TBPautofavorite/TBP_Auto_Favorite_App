@@ -19,11 +19,11 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
+	<!-- <div class="row"> -->
+		<?php // echo $form->labelEx($model,'id'); ?>
+		<?php // echo $form->textField($model,'id'); ?>
+		<?php // echo $form->error($model,'id'); ?>
+	<!-- </div> -->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
@@ -37,23 +37,23 @@
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
+	<!-- <div class="row"> -->
+		<?php // echo $form->labelEx($model,'email'); ?>
+		<?php // echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
+		<?php // echo $form->error($model,'email'); ?>
+	<!-- </div> -->
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'oauth_token'); ?>
-		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'oauth_token'); ?>
-	</div>
+	<!-- <div class="row"> -->
+		<?php // echo $form->labelEx($model,'oauth_token'); ?>
+		<?php // echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>128)); ?>
+		<?php // echo $form->error($model,'oauth_token'); ?>
+	<!-- </div> -->
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'oauth_token_secret'); ?>
-		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'oauth_token_secret'); ?>
-	</div>
+	<!-- <div class="row"> -->
+		<?php // echo $form->labelEx($model,'oauth_token_secret'); ?>
+		<?php // echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>128)); ?>
+		<?php // echo $form->error($model,'oauth_token_secret'); ?>
+	<!-- </div> -->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'searchtag1'); ?>
