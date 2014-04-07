@@ -49,14 +49,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'username',
 		'password',
 		'email',
+		'oauth_token',
+		'oauth_token_secret',
 		'searchtag1',
 		'searchtag2',
-		/*
 		'searchtag3',
 		'searchtag4',
 		'searchtag5',
 		'searchtag6',
-		*/
+		
 		array(
 			'class'=>'CButtonColumn',
 		),

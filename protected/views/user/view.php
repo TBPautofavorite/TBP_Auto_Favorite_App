@@ -25,6 +25,8 @@ $this->menu=array(
 		'username',
 		'password',
 		'email',
+		'oauth_token',
+		'oauth_token_secret',
 		'searchtag1',
 		'searchtag2',
 		'searchtag3',

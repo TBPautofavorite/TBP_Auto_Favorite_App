@@ -8,6 +8,8 @@
  * @property string $username
  * @property string $password
  * @property string $email
+ * @property string $oauth_token
+ * @property string $oauth_token_secret
  * @property string $searchtag1
  * @property string $searchtag2
  * @property string $searchtag3
@@ -39,10 +41,10 @@ class User extends CActiveRecord
 		return array(
 			array('id, username, password, email, searchtag1', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
-			array('username, password, email, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'length', 'max'=>128),
+			array('username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'safe', 'on'=>'search'),
+			array('id, username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +69,8 @@ class User extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'email' => 'Email',
+			'oauth_token' => 'oauth_token',
+			'oauth_token_secret' => 'oauth_token_secret',
 			'searchtag1' => 'Searchtag1',
 			'searchtag2' => 'Searchtag2',
 			'searchtag3' => 'Searchtag3',
@@ -98,6 +102,8 @@ class User extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('oauth_token',$this->oauth_token,true);
+		$criteria->compare('oauth_token_secret',$this->oauth_token_secret,true);
 		$criteria->compare('searchtag1',$this->searchtag1,true);
 		$criteria->compare('searchtag2',$this->searchtag2,true);
 		$criteria->compare('searchtag3',$this->searchtag3,true);

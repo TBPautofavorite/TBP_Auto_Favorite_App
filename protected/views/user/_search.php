@@ -27,6 +27,16 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'oauth_token'); ?>
+		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'oauth_token_secret'); ?>
+		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'searchtag1'); ?>
 		<?php echo $form->textField($model,'searchtag1',array('size'=>60,'maxlength'=>128)); ?>
 	</div>

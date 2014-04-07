@@ -83,7 +83,7 @@ return array(
 			'class' => 'ext.yiitwitteroauth.YiiTwitter',
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
             'consumer_secret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-            'callback' => 'http://www.tbpautofavorite.dev/twitteroauth/callback.php'
+            'callback' => 'http://www.tbpautofavorite.dev/callback.php'
 			)
 
 	),
@@ -92,7 +92,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'jsantoku@gmail.com',
 	),
 );
 

@@ -10,7 +10,7 @@ class YiiTwitter extends CApplicationComponent
 	public $consumer_secret = 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4';
 	
 	//The call back url for twitter
-	public $callback = 'http://www.tbpautofavorite.dev/twitter/callback.php';	
+	public $callback = 'http://www.tbpautofavorite.dev/callback.php';	
 	
 	//Can be set in config to not load OAuth.php
 	public $load_oauth = true;	

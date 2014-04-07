@@ -1,4 +1,7 @@
+
 <?php
+echo 'tbpautofavorite homepage';
+echo $content;
 /**
  * @file
  * User has successfully authenticated with Twitter. Access tokens saved to session and DB.
@@ -31,7 +34,7 @@ $content = $connection->get('account/verify_credentials');
 
 ////////////////
 //require_once('protected/extentions/twitteroauth/config.php');
-//if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'wtba5sUW4hYTduVrJi23tw' || CONSUMER_SECRET === 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4') {
+//if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'CONSUMER_KEY_HERE' || CONSUMER_SECRET === 'CONSUMER_SECRET_HERE') {
 //  echo 'You need a consumer key and secret to test the sample code. Get one from <a href="https://dev.twitter.com/apps">dev.twitter.com/apps</a>';
 //  exit;
 }
