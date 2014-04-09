@@ -1,5 +1,7 @@
 <?php
 
+/* Controller for Single Sign On (SSO) */ 
+
 class SsoController extends Controller
 {
 

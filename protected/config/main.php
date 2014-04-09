@@ -80,6 +80,7 @@ return array(
 				*/
 			),
 		),
+		/* added for yii twitter extension */
 		'twitter' => array(
 			'class' => 'ext.yiitwitteroauth.YiiTwitter',
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
