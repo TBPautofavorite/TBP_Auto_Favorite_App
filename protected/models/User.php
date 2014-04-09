@@ -1,21 +1,14 @@
 <?php
 
 /**
- * This is the model class for table "twitter_users".
+ * This is the model class for table "tbl_user".
  *
- * The followings are the available columns in table 'twitter_users':
+ * The followings are the available columns in table 'tbl_user':
  * @property integer $id
  * @property string $username
- * @property string $password
- * @property string $email
  * @property string $oauth_token
  * @property string $oauth_token_secret
- * @property string $searchtag1
- * @property string $searchtag2
- * @property string $searchtag3
- * @property string $searchtag4
- * @property string $searchtag5
- * @property string $searchtag6
+ * @property string $search_tag_1
  */
 class User extends CActiveRecord
 {
@@ -24,13 +17,9 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'twitter_users';
+		return 'tbl_user';
 	}
-	// this was added to address the lack of a primary key for the database:
-	public function primaryKey()
-	{
-		return 'id';
-	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -39,12 +28,10 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, searchtag1', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
-			array('username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'length', 'max'=>128),
+			array('username, oauth_token, oauth_token_secret, search_tag_1', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email, oauth_token, oauth_token_secret, searchtag1, searchtag2, searchtag3, searchtag4, searchtag5, searchtag6', 'safe', 'on'=>'search'),
+			array('id, username, oauth_token, oauth_token_secret, search_tag_1', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,16 +54,9 @@ class User extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'username' => 'Username',
-			'password' => 'Password',
-			'email' => 'Email',
 			'oauth_token' => 'Oauth Token',
 			'oauth_token_secret' => 'Oauth Token Secret',
-			'searchtag1' => 'Searchtag1',
-			'searchtag2' => 'Searchtag2',
-			'searchtag3' => 'Searchtag3',
-			'searchtag4' => 'Searchtag4',
-			'searchtag5' => 'Searchtag5',
-			'searchtag6' => 'Searchtag6',
+			'search_tag_1' => 'Search Tag 1',
 		);
 	}
 
@@ -100,16 +80,9 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('email',$this->email,true);
 		$criteria->compare('oauth_token',$this->oauth_token,true);
 		$criteria->compare('oauth_token_secret',$this->oauth_token_secret,true);
-		$criteria->compare('searchtag1',$this->searchtag1,true);
-		$criteria->compare('searchtag2',$this->searchtag2,true);
-		$criteria->compare('searchtag3',$this->searchtag3,true);
-		$criteria->compare('searchtag4',$this->searchtag4,true);
-		$criteria->compare('searchtag5',$this->searchtag5,true);
-		$criteria->compare('searchtag6',$this->searchtag6,true);
+		$criteria->compare('search_tag_1',$this->search_tag_1,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -126,39 +99,4 @@ class User extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
-
-
-	/*
-	public function searchTweets()
-
-	{
-
-		if (isset($_POST['keyword']) ) {
-			$tweets = $twitter->get ('https://api.twitter.com/1.1/search/tweets.json?q='.$_POST['keyword'].'&result_type=recent&count=50');
-	 		$hashtags = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q='.$_POST['keyword'].'&result_type=recent&count=3&include_entities=true');
-	 		// This one:
-	 		foreach($tweets as $tweet) {
-	 			foreach($tweet as $t) {
-	 				echo '<img src="'.$t->user->profile_image_url.'" /> '.$t->text .'<br>.';
-	 			}
-	 		}
-	 		// Or this one?:
-	 		//foreach($tweets->statuses as $tweet){
-			//	echo '<img src="'.$tweet->user->profile_image_url.'" /> '.$tweet->text.'<br>';
-			//}﻿
-			// To view hastag photo:
-			foreach ($hashtags->statuses as $tweet) {
-	    		echo "Tweet : ".$tweet->text."<br>";
-	   			//IF ( $tweet->entities->media[0]->media_url) {
-	   			if ($tweet->entities->media[0]->media_url) {
-	   				echo "Media : ".$tweet->entities->media[0]->media_url."<br>";
-	   			}
-	   		}
-	 	}
-
- 	}
- 	*/
-
-
 }

@@ -48,18 +48,17 @@ return array(
 		),
 		*/
 		//'db'=>array(
-		//	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/twitterAutoFavorite.db',
+		//	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/tbp_auto_favorite.db',
 		//),
 		// uncomment the following to use a MySQL database
-		
 		'db'=>array(
-			//'connectionString' => 'mysql:host=localhost;dbname=twitterAutoFavorite',
-			'connectionString' => 'mysql:host=localhost;dbname=twitterAutoFavorite',
+			'connectionString' => 'mysql:host=localhost;dbname=tbp_auto_favorite',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
 		),
+		/* database is located in /Applications/MAMP/db/mysql/tbp_auto_favorite/ */
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

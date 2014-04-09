@@ -10,24 +10,24 @@ session_start();
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
 require_once('config.php');
 
-//=====================================================
-/* Set keys */
-$consumerKey = 'wtba5sUW4hYTduVrJi23tw';
-$consumerSecret = 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4';
+// //=====================================================
+// /* Set keys */
+// $consumerKey = 'wtba5sUW4hYTduVrJi23tw';
+// $consumerSecret = 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4';
 
-//=====================================================
-/* If access tokens are not available redirect to connect page. */
-if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
-    header('Location: clearsessions.php');
-}
-/* Get user access tokens out of the session. */
-$access_token = $_SESSION['access_token'];
+// //=====================================================
+// /* If access tokens are not available redirect to connect page. */
+// if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
+//     header('Location: clearsessions.php');
+// }
+// /* Get user access tokens out of the session. */
+// $access_token = $_SESSION['access_token'];
 
-/* Create a TwitterOauth object with consumer/user tokens. */
-$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+// /* Create a TwitterOauth object with consumer/user tokens. */
+// $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
-/* If method is set change API call made. Test is called by default. */
-$content = $connection->get('account/verify_credentials');
+// /* If method is set change API call made. Test is called by default. */
+// $content = $connection->get('account/verify_credentials');
 
 /* print_r($access_token);
 	//sample output:
@@ -83,6 +83,18 @@ if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'CONSUMER_
 /* Build an image link to start the redirect process. */
 $content = '<a href="./redirect.php"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>';
 /////////////// 
+
+
+$yii=dirname(__FILE__).'/../YiiRoot/framework/yii.php';
+$config=dirname(__FILE__).'/protected/config/main.php';
+
+// remove the following lines when in production mode
+defined('YII_DEBUG') or define('YII_DEBUG',true);
+// specify how many levels of call stack should be shown in each log message
+defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+
+require_once($yii);
+Yii::createWebApplication($config)->run();
 
 //============================================
 /* Include HTML to display on the page */ 

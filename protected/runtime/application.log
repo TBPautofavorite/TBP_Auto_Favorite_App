@@ -904,3 +904,47 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/admin
 HTTP_REFERER=http://www.tbpautofavorite.dev/index.php?r=site/login
 ---
+2014/04/09 21:15:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php?r=user/index
+---
+2014/04/09 23:17:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php?r=user/index
+---
+2014/04/09 23:21:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/view')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/view
+---
