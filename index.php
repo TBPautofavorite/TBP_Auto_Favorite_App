@@ -8,7 +8,7 @@
 /* Load required lib files. */
 session_start();
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-require_once('config.php');
+require_once('protected/config/config.php');
 
 // //=====================================================
 // /* Set keys */
@@ -74,7 +74,7 @@ var_export($connection->http_info);
 
 //============================================
 /* This is taken from connect.php */
-require_once('config.php');
+require_once('protected/config/config.php');
 if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'CONSUMER_KEY_HERE' || CONSUMER_SECRET === 'CONSUMER_SECRET_HERE') {
   echo 'You need a consumer key and secret to test the sample code. Get one from <a href="https://dev.twitter.com/apps">dev.twitter.com/apps</a>';
   exit;
