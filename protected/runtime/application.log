@@ -948,3 +948,59 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/index.php?r=site/view
 ---
+2014/04/10 17:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite
+---
+2014/04/10 17:23:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite
+---
+2014/04/10 17:23:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite
+---
+2014/04/10 17:23:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite?admin".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite?admin')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite?admin
+---
+2014/04/10 17:23:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite/admin".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite/admin')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite/admin
+---
+2014/04/10 17:24:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favorite/manage".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('favorite/manage')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=favorite/manage
+---
+2014/04/10 17:24:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbl_favorite".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('tbl_favorite')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(97): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=tbl_favorite
+---

@@ -25,7 +25,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'root',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			//'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		//
 	),
@@ -54,6 +54,8 @@ return array(
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
+			//uncomment so if in the future we need to modify the table name prefix without touching our source code
+			//'tablePrefix' => 'tbl_',
 		),
 		/* database is located in /Applications/MAMP/db/mysql/tbp_auto_favorite/ */
 		
