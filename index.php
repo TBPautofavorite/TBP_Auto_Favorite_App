@@ -84,6 +84,8 @@ if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' || CONSUMER_KEY === 'CONSUMER_
 $content = '<a href="./redirect.php"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>';
 /////////////// 
 
+//--------------------
+/* Yii entry script */
 
 $yii=dirname(__FILE__).'/../YiiRoot/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
@@ -95,6 +97,7 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
+//--------------------
 
 //============================================
 /* Include HTML to display on the page */ 

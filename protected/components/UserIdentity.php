@@ -31,3 +31,34 @@ class UserIdentity extends CUserIdentity
 		return !$this->errorCode;
 	}
 }
+
+/*
+
+{
+    private $_id;
+ 
+    public function authenticate()
+    {
+        $username=strtolower($this->username);
+        $user=User::model()->find('LOWER(username)=?',array($username));
+        if($user===null)
+            $this->errorCode=self::ERROR_USERNAME_INVALID;
+        else if(!$user->validatePassword($this->password))
+            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        else
+        {
+            $this->_id=$user->id;
+            $this->username=$user->username;
+            $this->errorCode=self::ERROR_NONE;
+        }
+        return $this->errorCode==self::ERROR_NONE;
+    }
+ 
+    //below, we override the getId() method which returns the id value of the user found in the tbl_user table. The parent implementation would return the username, instead. Both the username and id properties will be stored in the user session and may be accessed via Yii::app()->user from anywhere in our code.
+    public function getId()
+    {
+        return $this->_id;
+    }
+}
+
+*/
