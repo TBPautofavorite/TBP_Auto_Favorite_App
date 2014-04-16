@@ -69,6 +69,9 @@ and join discussions with other Yii users.
 The Yii Developer Team
 http://www.yiiframework.com
 
+
+
+
 TwitterOAuth
 ------------
 
@@ -103,7 +106,7 @@ Parameters
 
 There are a number of parameters you can modify after creating a TwitterOAuth object.
 
-The latest reveissions of TwitterOAuth support the Twitter API v1.1 but if you want to
+The latest revisions of TwitterOAuth support the Twitter API v1.1 but if you want to
 update an old install from v1.0 you can do the following.
 
     $connection->host = "https://api.twitter.com/1.1/";
@@ -153,7 +156,7 @@ in with Twitter](https://dev.twitter.com/docs/auth/sign-twitter).
     https://api.twitter.com/oauth/authenticate?oauth_token=xyz123
 
 5) The user is now on twitter.com and may have to login. Once authenticated with Twitter they will
-will either have to click on allow/deny, or will be automatically redirected back to the callback.
+either have to click on allow/deny, or will be automatically redirected back to the callback.
 
 6) Now that the user has returned to callback.php and allowed access we need to build a new
 TwitterOAuth object using the temporary credentials.

@@ -8,82 +8,117 @@
 /* Start session and load lib */
 session_start();
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-require_once('config.php');
+require_once('protected/config/config.php');
 
 /* If the oauth_token is old redirect to the connect page. */
-// if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {
-//   $_SESSION['oauth_status'] = 'oldtoken';
-//   header('Location: ./clearsessions.php');
-// }
+if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {
+  $_SESSION['oauth_status'] = 'oldtoken';
+  header('Location: ./clearsessions.php');
+}
 
-// /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
-// $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+/* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
+$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 
-// /* Request access tokens from twitter */
-// $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
+/* Request access tokens from twitter */
+$access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 
-// /* Save the access tokens. Normally these would be saved in a database for future use. */ 
-// $_SESSION['access_token'] = $access_token;
+/* Save the access tokens. Normally these would be saved in a database for future use. */ 
+$_SESSION['access_token'] = $access_token;
 
-// /* Remove no longer needed request tokens */
-// unset($_SESSION['oauth_token']);
-// unset($_SESSION['oauth_token_secret']);
+/* Remove no longer needed request tokens */
+unset($_SESSION['oauth_token']);
+unset($_SESSION['oauth_token_secret']);
 
-// /* If HTTP response is 200 continue otherwise send to connect page to retry */
-// if (200 == $connection->http_code) {
-//   /* The user has been verified and the access tokens can be saved for future use */
-//   $_SESSION['status'] = 'verified';
-//   header('Location: ./index.php');
-// } else {
-//   /* Save HTTP status for error dialog on connnect page.*/
-//   header('Location: ./clearsessions.php');
-// }
+
+//=================================================================
+/* Let's connect to MySQL */
+
+$username = "root";
+$password = "root";
+$hostname = "localhost"; 
+
+$databaseName = "tbp_auto_favorite";
+
+//connection to the database
+echo "Let's try to connect to MySQL..." . "<br/>";
+$dbhandle = mysql_connect($hostname, $username, $password) 
+  or die("Unable to connect to MySQL");
+echo "Connected to MySQL" . "<br/>";
+
+//select a database to work with
+$selected = mysql_select_db($databaseName,$dbhandle) 
+  or die("Could not select examples");
+echo "Connected to database: " . $databaseName . "<br/>";
+
+
+/* Add authentication data to database */
+
+//$sql=mysql_query("update user SET oauth_token='$oauth_token',
+//oauth_token_secret='$oauth_token_secret' where id='1'");
+
+//$sql=mysql_query("update users SET oauth_token='$oauth_token',
+//oauth_token_secret='$oauth_token_secret' where username='$user_session'");
+
+//$sql = mysql_query("INSERT INTO `tbl_user` ('oauth_token') VALUES ('$access_token')");
+//$sql = "INSERT INTO 'user' VALUES ('$access_token')";
+
+//=================================================================
+
+/* If HTTP response is 200 continue otherwise send to connect page to retry */
+if (200 == $connection->http_code) {
+  /* The user has been verified and the access tokens can be saved for future use */
+  $_SESSION['status'] = 'verified';
+  header('Location: ./index.php');
+} else {
+  /* Save HTTP status for error dialog on connnect page.*/
+  header('Location: ./clearsessions.php');
+}
 
 ////////////////////////////
 
-public function actionTwitterCallBack() {   
+// public function actionTwitterCallBack() {   
 
-    /* If the oauth_token is old redirect to the connect page. */
-    if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
-        Yii::app()->session['oauth_status'] = 'oldtoken';
-    }
+//     /* If the oauth_token is old redirect to the connect page. */
+//     if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
+//         Yii::app()->session['oauth_status'] = 'oldtoken';
+//     }
 
-    /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
-    $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
+//     /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
+//     $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
 
-    /* Request access tokens from twitter */
-    $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
+//     /* Request access tokens from twitter */
+//     $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
 
-    /* Save the access tokens. Normally these would be saved in a database for future use. */
-    Yii::app()->session['access_token'] = $access_token;
+//     /* Save the access tokens. Normally these would be saved in a database for future use. */
+//     Yii::app()->session['access_token'] = $access_token;
 
-    /* Remove no longer needed request tokens */
-    unset(Yii::app()->session['oauth_token']);
-    unset(Yii::app()->session['oauth_token_secret']);
+//     /* Remove no longer needed request tokens */
+//     unset(Yii::app()->session['oauth_token']);
+//     unset(Yii::app()->session['oauth_token_secret']);
 
-    if (200 == $twitter->http_code) {
-        /* The user has been verified and the access tokens can be saved for future use */
-        Yii::app()->session['status'] = 'verified';
+//     if (200 == $twitter->http_code) {
+//         /* The user has been verified and the access tokens can be saved for future use */
+//         Yii::app()->session['status'] = 'verified';
 
-        //get an access twitter object
-        $twitter = Yii::app()->twitter->getTwitterTokened($access_token['oauth_token'],$access_token['oauth_token_secret']);
+//         //get an access twitter object
+//         $twitter = Yii::app()->twitter->getTwitterTokened($access_token['oauth_token'],$access_token['oauth_token_secret']);
 
-        //get user details
-        $twuser= $twitter->get("account/verify_credentials");
-        //get friends ids
-        $friends= $twitter->get("friends/ids");
-                    //get followers ids
-            $followers= $twitter->get("followers/ids");
-        //tweet
-                    $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
+//         //get user details
+//         $twuser= $twitter->get("account/verify_credentials");
+//         //get friends ids
+//         $friends= $twitter->get("friends/ids");
+//                     //get followers ids
+//         $followers= $twitter->get("followers/ids");
+//         //tweet
+//         $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
 
-    } else {
-        /* Save HTTP status for error dialog on connnect page.*/
-        //header('Location: /clearsessions.php');
-        $this->redirect(Yii::app()->homeUrl);
-    }
+//     } else {
+//         /* Save HTTP status for error dialog on connnect page.*/
+//         //header('Location: /clearsessions.php');
+//         $this->redirect(Yii::app()->homeUrl);
+//     }
 
-}
+// }
 
 
 ////////////////////////////
