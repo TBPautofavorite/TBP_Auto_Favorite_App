@@ -78,7 +78,9 @@ return array(
 				*/
 			),
 		),
+		
 		/* added for yii twitter extension */
+		//For Single Sign ON (SSO)
 		'twitter' => array(
 			'class' => 'ext.yiitwitteroauth.YiiTwitter',
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
