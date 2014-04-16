@@ -13,6 +13,10 @@
 	<?php echo CHtml::encode($data->username); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
+	<?php echo CHtml::encode($data->user_id); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('oauth_token')); ?>:</b>
 	<?php echo CHtml::encode($data->oauth_token); ?>
 	<br />

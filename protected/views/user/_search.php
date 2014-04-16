@@ -22,18 +22,23 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id',array('size'=>16,'maxlength'=>16)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'oauth_token'); ?>
-		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'oauth_token_secret'); ?>
-		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'search_tag_1'); ?>
-		<?php echo $form->textField($model,'search_tag_1',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'search_tag_1',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row buttons">

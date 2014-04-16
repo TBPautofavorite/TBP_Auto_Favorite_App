@@ -23,6 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'search_tag',
+		'user_id',
 		'username',
 	),
 )); ?>

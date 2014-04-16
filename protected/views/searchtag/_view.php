@@ -13,6 +13,10 @@
 	<?php echo CHtml::encode($data->search_tag); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
+	<?php echo CHtml::encode($data->user_id); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('username')); ?>:</b>
 	<?php echo CHtml::encode($data->username); ?>
 	<br />

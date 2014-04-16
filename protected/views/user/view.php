@@ -23,6 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'username',
+		'user_id',
 		'oauth_token',
 		'oauth_token_secret',
 		'search_tag_1',

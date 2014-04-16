@@ -26,20 +26,26 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id',array('size'=>16,'maxlength'=>16)); ?>
+		<?php echo $form->error($model,'user_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'oauth_token'); ?>
-		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'oauth_token',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'oauth_token'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'oauth_token_secret'); ?>
-		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'oauth_token_secret',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'oauth_token_secret'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'search_tag_1'); ?>
-		<?php echo $form->textField($model,'search_tag_1',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'search_tag_1',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'search_tag_1'); ?>
 	</div>
 

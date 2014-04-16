@@ -18,7 +18,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'search_tag'); ?>
-		<?php echo $form->textField($model,'search_tag',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'search_tag',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id',array('size'=>16,'maxlength'=>16)); ?>
 	</div>
 
 	<div class="row">

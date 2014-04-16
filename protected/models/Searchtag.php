@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'tbl_searchtag':
  * @property integer $id
  * @property string $search_tag
+ * @property string $user_id
  * @property string $username
  */
 class Searchtag extends CActiveRecord
@@ -26,10 +27,13 @@ class Searchtag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('search_tag, username', 'length', 'max'=>64),
+			array('user_id', 'required'),
+			array('search_tag', 'length', 'max'=>128),
+			array('user_id', 'length', 'max'=>16),
+			array('username', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, search_tag, username', 'safe', 'on'=>'search'),
+			array('id, search_tag, user_id, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +56,7 @@ class Searchtag extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'search_tag' => 'Search Tag',
+			'user_id' => 'User',
 			'username' => 'Username',
 		);
 	}
@@ -76,6 +81,7 @@ class Searchtag extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('search_tag',$this->search_tag,true);
+		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('username',$this->username,true);
 
 		return new CActiveDataProvider($this, array(
