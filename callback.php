@@ -30,39 +30,54 @@ unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
 
 
-//=================================================================
-/* Let's connect to MySQL */
+//============================================================================================
+/* Let's connect to MySQL and our twitter app database */
 
 $username = "root";
 $password = "root";
 $hostname = "localhost"; 
+$database_name = "tbp_auto_favorite";
 
-$databaseName = "tbp_auto_favorite";
-
-//connection to the database
+//connect to the database
 echo "Let's try to connect to MySQL..." . "<br/>";
 $dbhandle = mysql_connect($hostname, $username, $password) 
   or die("Unable to connect to MySQL");
 echo "Connected to MySQL" . "<br/>";
 
 //select a database to work with
-$selected = mysql_select_db($databaseName,$dbhandle) 
-  or die("Could not select examples");
-echo "Connected to database: " . $databaseName . "<br/>";
+$selected = mysql_select_db($database_name,$dbhandle) 
+  or die("Could not select " . $database_name);
+echo "Connected to database: " . $database_name . "<br/>";
 
+//make new variables for auth and set them equal to those in the access_token array assigned when the user logs in with twitter
+$callback_oauth_token = $access_token['oauth_token'];
+$callback_oauth_token_secret = $access_token['oauth_token_secret'];
+$callback_user_id = $access_token['user_id'];
+$callback_screen_name = $access_token['screen_name'];
+//====//
+$temporary_search_tag = "#thinkbig";
 
-/* Add authentication data to database */
+//add our new variable values to the tbp_auto_favorite database
+$input_data = mysql_query("INSERT INTO tbl_user
+	(username, oauth_token, oauth_token_secret, search_tag_1) 
+	VALUES 
+	('$callback_screen_name','$callback_oauth_token','$callback_oauth_token_secret','$temporary_search_tag')
+");
 
-//$sql=mysql_query("update user SET oauth_token='$oauth_token',
-//oauth_token_secret='$oauth_token_secret' where id='1'");
+/*
+//execute the SQL query and return records
+$result = mysql_query("SELECT id, username, oauth_token, oauth_token_secret FROM tbl_user");
 
-//$sql=mysql_query("update users SET oauth_token='$oauth_token',
-//oauth_token_secret='$oauth_token_secret' where username='$user_session'");
+//fetch tha data from the database 
+while ($row = mysql_fetch_array($result)) {
+   echo "ID: ".$row{'id'}." Username: ".$row{'username'}." Oauth Token: ".$row{'oauth_token'}."Oauth Token Secret: ".$row{'oauth_token_secret'}."<br/>"; //display the results
+}
+*/
 
-//$sql = mysql_query("INSERT INTO `tbl_user` ('oauth_token') VALUES ('$access_token')");
-//$sql = "INSERT INTO 'user' VALUES ('$access_token')";
+//close the connection
+mysql_close($dbhandle);
 
-//=================================================================
+//==========================================================================================
 
 /* If HTTP response is 200 continue otherwise send to connect page to retry */
 if (200 == $connection->http_code) {
@@ -73,6 +88,7 @@ if (200 == $connection->http_code) {
   /* Save HTTP status for error dialog on connnect page.*/
   header('Location: ./clearsessions.php');
 }
+
 
 ////////////////////////////
 
