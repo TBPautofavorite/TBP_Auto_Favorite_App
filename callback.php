@@ -58,11 +58,12 @@ $callback_screen_name = $access_token['screen_name'];
 $temporary_search_tag = "#thinkbig";
 
 //add our new variable values to the tbp_auto_favorite database
-$input_data = mysql_query("INSERT INTO tbl_user
-	(username, oauth_token, oauth_token_secret, search_tag_1) 
+$input_user_data = mysql_query("INSERT INTO tbl_user
+	(username, user_id, oauth_token, oauth_token_secret, search_tag_1) 
 	VALUES 
-	('$callback_screen_name','$callback_oauth_token','$callback_oauth_token_secret','$temporary_search_tag')
-");
+	('$callback_screen_name','$callback_user_id','$callback_oauth_token','$callback_oauth_token_secret','$temporary_search_tag')
+	");
+	//ignore id (the primary key) because it auto-increments
 
 /*
 //execute the SQL query and return records
@@ -73,6 +74,14 @@ while ($row = mysql_fetch_array($result)) {
    echo "ID: ".$row{'id'}." Username: ".$row{'username'}." Oauth Token: ".$row{'oauth_token'}."Oauth Token Secret: ".$row{'oauth_token_secret'}."<br/>"; //display the results
 }
 */
+
+//add new searchtag to tbl_searchtag
+/*$input_search_data = mysql_query("INSERT INTO tbl_searchtag
+	(search_tag, user_id, username)
+	VALUES
+	('$temporary_search_tag','$callback_user_id','$callback_screen_name')
+	");
+	//ignore id (the primary key) because it auto-increments*/
 
 //close the connection
 mysql_close($dbhandle);
