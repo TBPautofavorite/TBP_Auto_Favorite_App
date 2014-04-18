@@ -20,6 +20,58 @@ class UserIdentity extends CUserIdentity
 	 * @return boolean whether authentication succeeds.
 	 */
 
+	//Implement the authenticate() method to use the database to validate credentials.
+    private $_id;
+    public function authenticate()
+    {
+        $record=User::model()->findByAttributes(array('username'=>$this->username));
+        if($record===null)
+            $this->errorCode=self::ERROR_USERNAME_INVALID;
+        //WHAT CAN WE USE IN PLACE OF PASSWORD HERE? =====================================================
+        else if(!CPasswordHelper::verifyPassword($this->password,$record->password)) //CPasswordHelper hases the password and validates it, for security
+            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        else
+        {
+            $this->_id=$record->id;
+            $this->setState('title', $record->title); //Use the setState() (CBaseUserIdentity::setState) method to demonstrate storing other information that can easily be retrieved upon subsequent requests.
+            $this->setState('username', $record->username);
+            $this->setState('user_id', $record->user_id);
+            $this->setState('oauth_token', $record->oauth_token);
+            $this->setState('oauth_token_secret', $record->oauth_token_secret);
+            $this->errorCode=self::ERROR_NONE;
+        }
+        return !$this->errorCode;
+    }
+    /* the setState() method:
+    	setState(string $name, mixed $value) 
+    		$name, a string, is the name of the state
+    		$value, mixed, is the value of the named state
+    */
+    //CBaseUserIdentity::setState will be saved in the cookie, b/c cookie-based login is enabled
+
+    //Override the CUserIdentity::getId() method to return the _id property because the default implementation returns the username as the ID.
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+
+		/* original code */
+		/*$users=array(
+			// username => password
+			'demo'=>'demo',
+			'admin'=>'admin',
+		);
+		if(!isset($users[$this->username]))
+			$this->errorCode=self::ERROR_USERNAME_INVALID;
+		elseif($users[$this->username]!==$this->password)
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		else
+			$this->errorCode=self::ERROR_NONE;
+		return !$this->errorCode;*/
+	}
+}
+
 //=====================================================
 /* new attempt for twitter auth */
 	
@@ -50,28 +102,6 @@ class UserIdentity extends CUserIdentity
 
 
 	// }
-
-
-
-//=====================================================
-//Original:
-	public function authenticate()
-	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
-	}
-}
-
 
 
 //=====================================================

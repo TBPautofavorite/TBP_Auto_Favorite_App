@@ -55,13 +55,12 @@ $callback_oauth_token_secret = $access_token['oauth_token_secret'];
 $callback_user_id = $access_token['user_id'];
 $callback_screen_name = $access_token['screen_name'];
 //====//
-$temporary_search_tag = "#thinkbig";
 
 //add our new variable values to the tbp_auto_favorite database
 $input_user_data = mysql_query("INSERT INTO tbl_user
-	(username, user_id, oauth_token, oauth_token_secret, search_tag_1) 
+	(username, user_id, oauth_token, oauth_token_secret) 
 	VALUES 
-	('$callback_screen_name','$callback_user_id','$callback_oauth_token','$callback_oauth_token_secret','$temporary_search_tag')
+	('$callback_screen_name','$callback_user_id','$callback_oauth_token','$callback_oauth_token_secret')
 	");
 	//ignore id (the primary key) because it auto-increments
 
@@ -75,15 +74,6 @@ while ($row = mysql_fetch_array($result)) {
 }
 */
 
-//add new searchtag to tbl_searchtag
-/*
-$input_search_data = mysql_query("INSERT INTO tbl_searchtag
-	(search_tag, user_id, username)
-	VALUES
-	('$temporary_search_tag','$callback_user_id','$callback_screen_name')
-	");
-	//ignore id (the primary key) because it auto-increments
-*/
 
 //close the connection
 mysql_close($dbhandle);
@@ -101,52 +91,76 @@ if (200 == $connection->http_code) {
 }
 
 
+//==========================================================================================
+
+
 ////////////////////////////
 //See SsoController.php
 
-// public function actionTwitterCallBack() {   
+public function actionIndex()
+     {
+     $twitter = Yii::app()->twitter->getTwitter();  
+     $request_token = $twitter->getRequestToken();
+ 
+         //set some session info
+         Yii::app()->session['oauth_token'] = $token = $request_token['oauth_token'];
+         Yii::app()->session['oauth_token_secret'] = $request_token['oauth_token_secret'];
+ 
+        if($twitter->http_code == 200){
+            //get twitter connect url
+            $url = $twitter->getAuthorizeURL($token);
+            //send them
+            $this->redirect($url);
+        }else{
+            //error here
+            $this->redirect(Yii::app()->homeUrl);
+        }
+ 
+ 
+    }
 
-//     /* If the oauth_token is old redirect to the connect page. */
-//     if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
-//         Yii::app()->session['oauth_status'] = 'oldtoken';
-//     }
 
-//     /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
-//     $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
-
-//     /* Request access tokens from twitter */
-//     $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
-
-//     /* Save the access tokens. Normally these would be saved in a database for future use. */
-//     Yii::app()->session['access_token'] = $access_token;
-
-//     /* Remove no longer needed request tokens */
-//     unset(Yii::app()->session['oauth_token']);
-//     unset(Yii::app()->session['oauth_token_secret']);
-
-//     if (200 == $twitter->http_code) {
-//         /* The user has been verified and the access tokens can be saved for future use */
-//         Yii::app()->session['status'] = 'verified';
-
-//         //get an access twitter object
-//         $twitter = Yii::app()->twitter->getTwitterTokened($access_token['oauth_token'],$access_token['oauth_token_secret']);
-
-//         //get user details
-//         $twuser= $twitter->get("account/verify_credentials");
-//         //get friends ids
-//         $friends= $twitter->get("friends/ids");
-//                     //get followers ids
-//         $followers= $twitter->get("followers/ids");
-//         //tweet
-//         $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
-
-//     } else {
-//         /* Save HTTP status for error dialog on connnect page.*/
-//         //header('Location: /clearsessions.php');
-//         $this->redirect(Yii::app()->homeUrl);
-//     }
-
-// }
+public function actionTwitterCallBack() {   
+        /* If the oauth_token is old redirect to the connect page. */
+        if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
+            Yii::app()->session['oauth_status'] = 'oldtoken';
+        }
+ 
+        /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
+        $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
+ 
+        /* Request access tokens from twitter */
+        $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
+ 
+        /* Save the access tokens. Normally these would be saved in a database for future use. */
+        Yii::app()->session['access_token'] = $access_token;
+ 
+        /* Remove no longer needed request tokens */
+        unset(Yii::app()->session['oauth_token']);
+        unset(Yii::app()->session['oauth_token_secret']);
+ 
+        if (200 == $twitter->http_code) {
+            /* The user has been verified and the access tokens can be saved for future use */
+            Yii::app()->session['status'] = 'verified';
+ 
+            //get an access twitter object
+            $twitter = Yii::app()->twitter->getTwitterTokened($access_token['oauth_token'],$access_token['oauth_token_secret']);
+ 
+            //get user details
+            $twuser= $twitter->get("account/verify_credentials");
+            //get friends ids
+            $friends= $twitter->get("friends/ids");
+                        //get followers ids
+                $followers= $twitter->get("followers/ids");
+            //tweet
+                        $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
+ 
+        } else {
+            /* Save HTTP status for error dialog on connnect page.*/
+            //header('Location: /clearsessions.php');
+            $this->redirect(Yii::app()->homeUrl);
+        }
+    }
 
 
 ////////////////////////////

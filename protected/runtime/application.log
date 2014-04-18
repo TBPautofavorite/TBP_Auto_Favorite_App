@@ -1004,3 +1004,19 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php?r=tbl_favorite
 ---
+2014/04/17 17:24:24 [error] [php] A session had already been started - ignoring session_start() (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/models/LoginForm.php:4)
+Stack trace:
+#0 unknown(0): autoload()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(80): spl_autoload_call()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(99): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/models/LoginForm.php (4)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (80)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (99)

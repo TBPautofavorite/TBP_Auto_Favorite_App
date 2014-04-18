@@ -33,7 +33,7 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
+			// enable cookie-based authentication. Comment out, or change to false, to disable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
@@ -78,7 +78,7 @@ return array(
 				*/
 			),
 		),
-		
+
 		/* added for yii twitter extension */
 		//For Single Sign ON (SSO)
 		'twitter' => array(
