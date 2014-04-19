@@ -26,6 +26,5 @@ $this->menu=array(
 		'user_id',
 		'oauth_token',
 		'oauth_token_secret',
-		'search_tag_1',
 	),
 )); ?>

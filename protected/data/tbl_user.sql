@@ -3,17 +3,16 @@
 --     username VARCHAR(128) NOT NULL,
 --     oauth_token VARCHAR(128) NOT NULL,
 --     oauth_token_secret VARCHAR(128) NOT NULL,
---     search_tag_1 VARCHAR(128)
 -- );
 
-CREATE TABLE `tbl_user` (
+CREATE TABLE IF NOT EXISTS `tbl_user` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(128) NOT NULL,
+    `username` VARCHAR(64) NOT NULL,
+    `user_id` VARCHAR(16) NOT NULL,
     `oauth_token` VARCHAR(128) NOT NULL,
     `oauth_token_secret` VARCHAR(128) NOT NULL,
-    `search_tag_1` VARCHAR(128),
     PRIMARY KEY (`id`)
 
 );
 
-INSERT INTO `tbl_user` (username, oauth_token, oauth_token_secret, search_tag_1) VALUES ('newuser1', 'lkjhasdf1234', 'asdf1234lkjh', '#thinkbig');
+INSERT INTO `tbl_user` (username, oauth_token, oauth_token_secret) VALUES ('newuser1', 'lkjhasdf1234', 'asdf1234lkjh');

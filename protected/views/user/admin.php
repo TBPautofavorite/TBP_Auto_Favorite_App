@@ -50,7 +50,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'user_id',
 		'oauth_token',
 		'oauth_token_secret',
-		'search_tag_1',
 		array(
 			'class'=>'CButtonColumn',
 		),

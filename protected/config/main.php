@@ -37,16 +37,17 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'<controller:\w+>'=>'<controller>/list',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                '<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
+                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
 			),
 		),
-		*/
+		
 		/* for MySQL database */
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=tbp_auto_favorite',
@@ -85,7 +86,9 @@ return array(
 			'class' => 'ext.yiitwitteroauth.YiiTwitter',
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
             'consumer_secret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-            'callback' => 'http://www.tbpautofavorite.dev/callback.php'
+            'callback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
+            //'callback' => 'http://www.tbpautofavorite.dev/index.php?r=user/TwitterCallBack'
+            //'callback' => 'http://www.tbpautofavorite.dev/callback.php'
 			)
 
 	),

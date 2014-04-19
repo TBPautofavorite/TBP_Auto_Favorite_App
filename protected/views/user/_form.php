@@ -43,12 +43,6 @@
 		<?php echo $form->error($model,'oauth_token_secret'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'search_tag_1'); ?>
-		<?php echo $form->textField($model,'search_tag_1',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'search_tag_1'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

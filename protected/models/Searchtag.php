@@ -55,7 +55,6 @@ class Searchtag extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'search_tag' => 'Search Tag',
 			'user_id' => 'User',
 			'username' => 'Username',
 		);
@@ -80,7 +79,6 @@ class Searchtag extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('search_tag',$this->search_tag,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('username',$this->username,true);
 

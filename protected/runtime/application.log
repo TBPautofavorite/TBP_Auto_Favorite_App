@@ -1004,3 +1004,470 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php?r=tbl_favorite
 ---
+2014/04/18 03:36:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twittercallbacka".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twittercallback...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twittercallback...')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/twittercal...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(34): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/twittercallbacka
+---
+2014/04/18 03:36:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sitea/twittercallback".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('sitea/twitterca...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(34): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=sitea/twittercallback
+---
+2014/04/18 04:08:17 [error] [php] A session had already been started - ignoring session_start() (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:36)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (36)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:08:34 [error] [php] A session had already been started - ignoring session_start() (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:36)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (36)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:08:41 [error] [php] A session had already been started - ignoring session_start() (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:36)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (36)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:10:28 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (40)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:10:31 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (40)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:10:41 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (40)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:11:14 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (40)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:11:16 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (40)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 04:18:01 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/twitterredirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:52:31 [error] [php] Undefined index: oauth_verifier (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:136)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/twittercallback
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (136)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:53:19 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:53:54 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:05 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:25 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:26 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:26 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:39 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:39 [error] [php] include(TwitterOAuth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php(171): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionTwitterRedirect()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (171)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:50 [error] [php] require_once(../protected/extensions/yiitwitteroauth/twitteroauth.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:170)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (170)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (170)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 19:55:57 [error] [php] Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY' (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php:172)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterRedirect
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (172)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 20:06:53 [error] [php] Undefined index: oauth_token (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php:131)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterCallBack&oauth_token=H7WrxoYGqnEXGynNuLpGXHzKGpD7wqyho2uWVV3dzU&oauth_verifier=QCbjskt4kqFU0TgTmYEiKwnqKlej53L7aQU8sTINM
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (136)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 20:42:21 [error] [php] Undefined index: oauth_token (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php:131)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterCallBack&oauth_token=tjMKKQhlOQvhoKYeXk6H08pxPJGuouwKq7rkSqETCCA&oauth_verifier=SFDzS0Uasxui0mKBK8CscTc2KmQSMsfN9YN2bP1eSY
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (138)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 20:42:23 [error] [php] Undefined index: oauth_token (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php:131)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterCallBack&oauth_token=tjMKKQhlOQvhoKYeXk6H08pxPJGuouwKq7rkSqETCCA&oauth_verifier=SFDzS0Uasxui0mKBK8CscTc2KmQSMsfN9YN2bP1eSY
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (138)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 20:43:09 [error] [php] Undefined index: oauth_token (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php:131)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/TwitterCallBack&oauth_token=tjMKKQhlOQvhoKYeXk6H08pxPJGuouwKq7rkSqETCCA&oauth_verifier=SFDzS0Uasxui0mKBK8CscTc2KmQSMsfN9YN2bP1eSY
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/SiteController.php (138)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 20:53:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('login')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/login
+---
+2014/04/18 21:06:09 [error] [php] Undefined index: oauth_verifier (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php:189)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/TwitterCallBack
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (189)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 21:20:48 [error] [php] Undefined index: oauth_verifier (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php:191)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/TwitterCallBack
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (191)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/18 21:21:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twittercallback".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twittercallback')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twittercallback')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/twittercal...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/twittercallback
+---
+2014/04/19 02:01:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gi".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('gi')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gi
+---
+2014/04/19 02:19:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/search')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/search
+---
+2014/04/19 02:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "loginform/loginwithtwitter".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('loginform/login...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=loginform/loginwithtwitter
+---
+2014/04/19 02:30:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "loginform".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('loginform')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=loginform
+---
+2014/04/19 02:47:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "loginform".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('loginform')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=loginform
+---
+2014/04/19 02:59:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/twittercallback".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('login/twitterca...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/login/twittercallback
+---
+2014/04/19 02:59:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twittercallback".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twittercallback')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twittercallback')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/twittercal...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/twittercallback
+---
+2014/04/19 03:04:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twitterredirect".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twitterredirect')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twitterredirect')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/twitterred...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/twitterredirect
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php
+---
+2014/04/19 03:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twitterredirect".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twitterredirect')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twitterredirect')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/twitterred...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/twitterredirect
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php
+---
+2014/04/19 03:05:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "twitterredirect".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('twitterredirect')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('twitterredirect')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/twitterred...')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/twitterredirect
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php
+---

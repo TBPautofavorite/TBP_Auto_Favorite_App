@@ -27,9 +27,22 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		//echo "SiteController public function actionIndex()";
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
+
+		/* Load required lib files. */
+		//session_start();
+		//require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
+		//require_once('./protected/config/config.php');
+
+
+		/* Build an image link to start the redirect process. */
+		$content = '<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>';
+		echo $content;
+		/////////////// 
+
 	}
 
 	/**
@@ -76,6 +89,7 @@ class SiteController extends Controller
 	 * Displays the login page
 	 */
 	public function actionLogin()
+	//Here, we first create a LoginForm model instance; if the request is a POST request (meaning the login form is submitted), we populate $model with the submitted data $_POST['LoginForm']; we then validate the input and if successful, redirect the user browser to the page that previously needed authentication. If the validation fails, or if the action is initially accessed, we render the login view whose content is to be described in the next subsection.
 	{
 		$model=new LoginForm;
 
@@ -89,7 +103,7 @@ class SiteController extends Controller
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
-			$model->attributes=$_POST['LoginForm'];
+			$model->attributes=$_POST['LoginForm']; //this line of code populates the model with the user submitted data
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
@@ -106,4 +120,58 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionTwitterLogin()
+	{
+		//JUST TO BUILD A SESSION	
+		$isguest = Yii::app()->user->getIsGuest();
+		//JUST TO BUILD A SESSION		
+		
+		//grab twitter object and request token
+		$twitter = Yii::app()->twitter->getTwitter();	
+		$request_token = $twitter->getRequestToken();
+		
+		//set some session info
+		$_SESSION['oauth_token'] = $token = $request_token['oauth_token'];
+		$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+
+		if($twitter->http_code == 200){
+			//get twitter connect url
+			$url = $twitter->getAuthorizeURL($token);
+			//send them
+			$this->redirect($url);
+		} else{
+			//error here
+			$this->redirect(Yii::app()->homeUrl);
+		}
+	
+	}
+
+    public function actionTwitterRedirect()
+    {
+    	require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
+    	require_once('./protected/config/config.php');
+
+    	/* Build TwitterOAuth object with client credentials. */
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+		 
+		/* Get temporary credentials. */
+		$request_token = $connection->getRequestToken(OAUTH_CALLBACK);
+
+		/* Save temporary credentials to session. */
+		$_SESSION['oauth_token'] = $token = $request_token['oauth_token'];
+		$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+		 
+		/* If last connection failed don't display authorization link. */
+		switch ($connection->http_code) {
+		  case 200:
+		    /* Build authorize URL and redirect user to Twitter. */
+		    $url = $connection->getAuthorizeURL($token);
+		    header('Location: ' . $url); 
+		    break;
+		  default:
+		    /* Show notification if something went wrong. */
+		    echo 'Could not connect to Twitter. Refresh the page or try again later.';
+		}
+    }
 }

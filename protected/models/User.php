@@ -9,7 +9,7 @@
  * @property string $user_id
  * @property string $oauth_token
  * @property string $oauth_token_secret
- * @property string $search_tag_1
+ * @property string $twitter_id
  */
 class User extends CActiveRecord
 {
@@ -32,10 +32,10 @@ class User extends CActiveRecord
 			array('username, user_id, oauth_token, oauth_token_secret', 'required'),
 			array('username', 'length', 'max'=>64),
 			array('user_id', 'length', 'max'=>16),
-			array('oauth_token, oauth_token_secret, search_tag_1', 'length', 'max'=>128),
+			array('oauth_token, oauth_token_secret', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, user_id, oauth_token, oauth_token_secret, search_tag_1', 'safe', 'on'=>'search'),
+			array('id, username, user_id, oauth_token, oauth_token_secret', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +61,6 @@ class User extends CActiveRecord
 			'user_id' => 'User',
 			'oauth_token' => 'Oauth Token',
 			'oauth_token_secret' => 'Oauth Token Secret',
-			'search_tag_1' => 'Search Tag 1',
 		);
 	}
 
@@ -88,7 +87,6 @@ class User extends CActiveRecord
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('oauth_token',$this->oauth_token,true);
 		$criteria->compare('oauth_token_secret',$this->oauth_token_secret,true);
-		$criteria->compare('search_tag_1',$this->search_tag_1,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -107,17 +105,4 @@ class User extends CActiveRecord
 	}
 
 
-	/*
-
-	public function validatePassword($password)
-    {
-        return CPasswordHelper::verifyPassword($password,$this->password);
-    }
- 
-    public function hashPassword($password)
-    {
-        return CPasswordHelper::hashPassword($password);
-    }
-
-	*/
 }

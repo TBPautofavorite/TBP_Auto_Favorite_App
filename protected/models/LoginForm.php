@@ -8,6 +8,13 @@
 class LoginForm extends CFormModel
 {
 	public $username;
+	public $user_id;
+	public $oauth_token;
+	public $oauth_token_secret;
+	public $consumer_key;
+	public $consumer_secret;
+
+	
 	public $password;
 	public $rememberMe;
 
@@ -74,4 +81,28 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+
+	public function loginWithTwitter() 
+	{
+        $config = array (
+        		'oauth_token' => Yii::app()->para,s ['oauth_token'],
+        		'oauth_token_secret' => Yii::app()->para,s ['oauth_token_secret'],
+        		'username' => Yii::app()->para,s ['username'],
+        		'user_id' => Yii::app()->para,s ['user_id'],
+        		'comsumer_key' => Yii::app()->para,s ['consumer_key'],
+        		'comsumer_secret' => Yii::app()->para,s ['consumer_key_secret'],
+
+                // 'appId' => Yii::app()->params ['fbAppId'],
+                // 'secret' => Yii::app()->params ['fbAppSecret'],
+                // 'fileUpload' => false  // optional
+        );
+        
+        $twitter = new Twitter($config);
+        if( $this->_identity === null && $twitter->getUser() ) {
+            $this->_identity = new TWUserIdentity( $twitter->getUser() );
+            $this->_identity->authenticate();
+        }
+        
+        return $this->login();
+    }
 }

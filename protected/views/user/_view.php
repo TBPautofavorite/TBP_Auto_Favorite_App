@@ -25,9 +25,5 @@
 	<?php echo CHtml::encode($data->oauth_token_secret); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('search_tag_1')); ?>:</b>
-	<?php echo CHtml::encode($data->search_tag_1); ?>
-	<br />
-
 
 </div>
