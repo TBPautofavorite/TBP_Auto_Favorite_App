@@ -42,8 +42,9 @@ class YiiTwitter extends CApplicationComponent
 	* Use this for after we have a token and a secret for the use.
 	*	(you must save these in order for them to be usefull
 	*/
+
 	public function getTwitterTokened($token,$secret) {
-		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	
+		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	// TwitterOAuth is the class starting on line 23 in twitteroauth.php
 	}
 		
     /**

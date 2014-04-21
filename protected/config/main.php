@@ -101,9 +101,12 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'jsantoku@gmail.com'
-        //'CONSUMER_KEY' => 'wtba5sUW4hYTduVrJi23tw',
-        //'CONSUMER_SECRET' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-        //'OAUTH_CALLBACK' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
+	/* use these later on insead of other two name formats XXXX_XXXX and xxxx_xxxx */
+//	    'adminEmail'=>'jsantoku@gmail.com',
+//      'consumerKey' => 'wtba5sUW4hYTduVrJi23tw', 
+//      'consumerSecret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
+//      'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
+
 	)
 
 );

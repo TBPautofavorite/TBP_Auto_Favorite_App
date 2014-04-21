@@ -173,12 +173,15 @@ class UserController extends Controller
 		}
 	}
 
-/*	public function getTwitterTokened($token,$secret) {
-		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	
-	}*/
-
 	public function actionTwitterCallBack() 
 	{   
+		/* some debugging */
+		echo $_REQUEST['oauth_token'];
+		echo '<br>';
+		echo $_REQUEST['oauth_verifier'];
+		echo '<br>';
+		echo Yii::app()->session['oauth_token'];
+
 
         /* If the oauth_token is old redirect to the connect page. */
         if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {

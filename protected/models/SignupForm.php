@@ -5,20 +5,25 @@
  * LoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
-class LoginForm extends CFormModel
+class SignupForm extends CFormModel
 {
 	public $username;
+
+	public $password;
+
 	public $user_id;
+	
 	public $oauth_token;
+	
 	public $oauth_token_secret;
+	
 	public $consumer_key;
+	
 	public $consumer_secret;
 
-	
-	public $password;
-	public $rememberMe;
-
-	private $_identity;
+	public $_identity;
+	//public $password;
+	//public $rememberMe;
 
 	/**
 	 * Declares the validation rules.
@@ -27,15 +32,72 @@ class LoginForm extends CFormModel
 	 */
 	public function rules()
 	{
-		return array(
-			// username and password are required
-			array('username, password', 'required'),
-			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
-			// password needs to be authenticated
-			array('password', 'authenticate'),
-		);
+		return array (
+                array (
+                        'username, user_id, oauth_token, oauth_token_secret, consumer_key, consumer_secret',
+                        'required' 
+                ),
+                array (
+                        'username',
+                        'username' 
+                ),
+                array (
+                        'username',
+                        'unique' 
+                ),
+                array (
+                        'username, user_id',
+                        'length',
+                        'max' => 64 
+                ),
+                array (
+                        'username',
+                        'length',
+                        'max' => 64 
+                )
+        );
 	}
+
+
+    /**
+     * Authenticates the password. This is the 'authenticate' validator as declared in rules().
+     */
+    public function authenticate($attribute, $params) {
+        if( $this->password != $this->confirm_password )
+            $this->addError( 'confirm_password', 'Passwords are not same.' );
+    }
+
+    /**
+     * Declares attribute labels.
+     */
+    public function attributeLabels() {
+        return array (
+                'email' => 'Email address',
+                'full_name' => 'Full Name',
+                'password' => 'Password',
+                'confirm_password' => 'Confirm Password',
+                'picture' => 'Picture URL',
+                'user_type' => 'What Are You?' 
+        );
+    }
+
+    /**
+     * sign up
+     */
+    public function signup() {
+        $user = new User();
+        
+        $user->attributes = $_POST ['SignupForm'];
+        $user->password = User::generateHash( $user->password );
+        $user->created_at = date( Constants::DATE_TIME_FORMAT );
+        if( $user->validate() ) {
+            $user->save();
+        }
+        
+        $this->_identity = new UserIdentity( $user->email, $user->password );
+    }
+
+    //=================================================
 
 	/**
 	 * Declares attribute labels.
@@ -83,8 +145,13 @@ class LoginForm extends CFormModel
 			return false;
 	}*/
 
-	public function loginWithTwitter() 
+	public function signupWithTwitter() 
 	{
+
+		$user = new User();
+
+
+
         $config = array (
         		'oauth_token' => Yii::app()->params ['oauth_token'],
         		'oauth_token_secret' => Yii::app()->params ['oauth_token_secret'],
@@ -108,16 +175,4 @@ class LoginForm extends CFormModel
         return $this->login();
     }
 
-    /**
-     * login 
-     * @return boolean
-     */
-    public function login() {
-        if( $this->_identity->errorCode === UserIdentity::ERROR_NONE ) {
-            $duration = $this->rememberMe ? 3600 * 24 * 30 : 0; // 30 days
-            Yii::app()->user->login( $this->_identity, $duration );
-            return true;
-        }
-        return false;
-    }
 }

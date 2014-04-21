@@ -128,7 +128,7 @@ class TwitterOAuth {
     }
     $request = $this->oAuthRequest($this->accessTokenURL(), 'GET', $parameters);
     $token = OAuthUtil::parse_parameters($request);
-    $this->token = new OAuthConsumer($token['oauth_token'], $token['oauth_token_secret']);
+    $this->token = new OAuthConsumer($token['oauth_token'], $token['oauth_token_secret']); // OAuthConsumer is the class starting on line 12 in OAuth.php
     return $token;
   }
 
