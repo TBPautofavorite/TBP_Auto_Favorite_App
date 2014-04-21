@@ -7,7 +7,7 @@
  */
 ///
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-require_once('protected/config/config.php');
+require_once('protected/config/main.php');
 ///
 class UserIdentity extends CUserIdentity
 {
@@ -59,6 +59,7 @@ public function authenticate()
     {
         return $this->_id;
     }
+
 
 //=====================================================
 /* new attempt for twitter auth */

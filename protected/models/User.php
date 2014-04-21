@@ -9,7 +9,6 @@
  * @property string $user_id
  * @property string $oauth_token
  * @property string $oauth_token_secret
- * @property string $twitter_id
  */
 class User extends CActiveRecord
 {

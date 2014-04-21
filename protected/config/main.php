@@ -87,8 +87,6 @@ return array(
             'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
             'consumer_secret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
             'callback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
-            //'callback' => 'http://www.tbpautofavorite.dev/index.php?r=user/TwitterCallBack'
-            //'callback' => 'http://www.tbpautofavorite.dev/callback.php'
 			)
 
 	),
@@ -98,7 +96,11 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'jsantoku@gmail.com',
+		//'CONSUMER_KEY' => 'wtba5sUW4hYTduVrJi23tw',
+		//'CONSUMER_SECRET' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
+		//'OAUTH_CALLBACK' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
 	),
+
 );
 
 
