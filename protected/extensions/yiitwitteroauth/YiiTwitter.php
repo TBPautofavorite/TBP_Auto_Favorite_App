@@ -32,7 +32,7 @@ class YiiTwitter extends CApplicationComponent
 	
 	
 	/**
-	* Use this one for when we need to authicate oursevles with twitter
+	* Use this one for when we need to authenticate ourselves with twitter
 	*/
 	public function getTwitter() {
 		return new TwitterOAuth($this->consumer_key,$this->consumer_secret);			
