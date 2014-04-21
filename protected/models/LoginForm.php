@@ -8,7 +8,7 @@
 class LoginForm extends CFormModel
 {
 	public $username;
-	public $user_id;
+	public $twitter_id;
 	public $oauth_token;
 	public $oauth_token_secret;
 	public $consumer_key;
@@ -89,7 +89,7 @@ class LoginForm extends CFormModel
         		'oauth_token' => Yii::app()->params ['oauth_token'],
         		'oauth_token_secret' => Yii::app()->params ['oauth_token_secret'],
         		'username' => Yii::app()->params ['username'],
-        		'user_id' => Yii::app()->params ['user_id'],
+        		'twitter_id' => Yii::app()->params ['twitter_id'],
         		'comsumer_key' => Yii::app()->params ['consumer_key'],
         		'comsumer_secret' => Yii::app()->params ['consumer_secret'],
 

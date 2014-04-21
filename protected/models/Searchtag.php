@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'tbl_searchtag':
  * @property integer $id
  * @property string $search_tag
- * @property string $user_id
+ * @property string $twitter_id
  * @property string $username
  */
 class Searchtag extends CActiveRecord
@@ -27,13 +27,13 @@ class Searchtag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id', 'required'),
+			array('twitter_id', 'required'),
 			array('search_tag', 'length', 'max'=>128),
-			array('user_id', 'length', 'max'=>16),
-			array('username', 'length', 'max'=>64),
+			array('twitter_id', 'length', 'max'=>32),
+			array('username', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, search_tag, user_id, username', 'safe', 'on'=>'search'),
+			array('id, search_tag, twitter_id, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +55,7 @@ class Searchtag extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'user_id' => 'User',
+			'twitter_id' => 'User',
 			'username' => 'Username',
 		);
 	}
@@ -79,7 +79,7 @@ class Searchtag extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('twitter_id',$this->twitter_id,true);
 		$criteria->compare('username',$this->username,true);
 
 		return new CActiveDataProvider($this, array(

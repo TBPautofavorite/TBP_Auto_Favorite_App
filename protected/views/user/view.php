@@ -23,7 +23,9 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'username',
-		'user_id',
+		'email',
+		'password',
+		'twitter_id',
 		'oauth_token',
 		'oauth_token_secret',
 	),

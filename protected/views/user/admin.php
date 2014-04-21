@@ -47,7 +47,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'username',
-		'user_id',
+		'email',
+		'password',
+		'twitter_id',
 		'oauth_token',
 		'oauth_token_secret',
 		array(

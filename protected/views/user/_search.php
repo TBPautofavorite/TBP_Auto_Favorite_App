@@ -18,12 +18,22 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->textField($model,'username',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id',array('size'=>16,'maxlength'=>16)); ?>
+		<?php echo $form->label($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('size'=>32,'maxlength'=>32)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'password'); ?>
+		<?php echo $form->textField($model,'password',array('size'=>32,'maxlength'=>32)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'twitter_id'); ?>
+		<?php echo $form->textField($model,'twitter_id',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
 
 	<div class="row">

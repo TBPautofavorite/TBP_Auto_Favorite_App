@@ -6,7 +6,9 @@
  * The followings are the available columns in table 'tbl_user':
  * @property integer $id
  * @property string $username
- * @property string $user_id
+ * @property string $email
+ * @property string $password
+ * @property string $twitter_id
  * @property string $oauth_token
  * @property string $oauth_token_secret
  */
@@ -28,13 +30,32 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, user_id, oauth_token, oauth_token_secret', 'required'),
-			array('username', 'length', 'max'=>64),
-			array('user_id', 'length', 'max'=>16),
-			array('oauth_token, oauth_token_secret', 'length', 'max'=>128),
+			array(
+				'username, email, password', 
+				'required'
+			),
+			array(
+				'username, email, password, twitter_id', 
+				'length', 
+				'max'=>32
+			),
+			/*array(
+				'oauth_token, oauth_token_secret', 
+				'length', 
+				'max'=>128
+			),*/
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, user_id, oauth_token, oauth_token_secret', 'safe', 'on'=>'search'),
+			/* array(
+				'id, username, twitter_id, oauth_token, oauth_token_secret', 
+				'safe', 
+				'on'=>'search'
+			),*/
+			array(
+				'id, username, email, password, twitter_id', 
+				'safe', 
+				'on'=>'search'
+			),
 		);
 	}
 
@@ -57,7 +78,7 @@ class User extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'username' => 'Username',
-			'user_id' => 'User',
+			'twitter_id' => 'User',
 			'oauth_token' => 'Oauth Token',
 			'oauth_token_secret' => 'Oauth Token Secret',
 		);
@@ -83,7 +104,7 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
-		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('twitter_id',$this->twitter_id,true);
 		$criteria->compare('oauth_token',$this->oauth_token,true);
 		$criteria->compare('oauth_token_secret',$this->oauth_token_secret,true);
 

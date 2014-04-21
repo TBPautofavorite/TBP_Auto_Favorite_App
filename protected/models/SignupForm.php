@@ -11,7 +11,7 @@ class SignupForm extends CFormModel
 
 	public $password;
 
-	public $user_id;
+	public $twitter_id;
 	
 	public $oauth_token;
 	
@@ -34,7 +34,7 @@ class SignupForm extends CFormModel
 	{
 		return array (
                 array (
-                        'username, user_id, oauth_token, oauth_token_secret, consumer_key, consumer_secret',
+                        'username, twitter_id, oauth_token, oauth_token_secret, consumer_key, consumer_secret',
                         'required' 
                 ),
                 array (
@@ -46,7 +46,7 @@ class SignupForm extends CFormModel
                         'unique' 
                 ),
                 array (
-                        'username, user_id',
+                        'username, twitter_id',
                         'length',
                         'max' => 64 
                 ),
@@ -156,7 +156,7 @@ class SignupForm extends CFormModel
         		'oauth_token' => Yii::app()->params ['oauth_token'],
         		'oauth_token_secret' => Yii::app()->params ['oauth_token_secret'],
         		'username' => Yii::app()->params ['username'],
-        		'user_id' => Yii::app()->params ['user_id'],
+        		'twitter_id' => Yii::app()->params ['twitter_id'],
         		'comsumer_key' => Yii::app()->params ['consumer_key'],
         		'comsumer_secret' => Yii::app()->params ['consumer_secret'],
 

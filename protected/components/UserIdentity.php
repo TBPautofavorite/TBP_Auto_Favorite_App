@@ -34,12 +34,12 @@ public function authenticate()
             $this->setState('title', $record->title); //Use the setState() (CBaseUserIdentity::setState) method to demonstrate storing other information that can easily be retrieved upon subsequent requests.
 /*            $this->setPersistentStates( array (
                 'username' => $record->username,
-	            'user_id' => $record->user_id,
+	            'twitter_id' => $record->twitter_id,
 	            'oauth_token' => $record->oauth_token,
 	            'oauth_token_secret' => $record->oauth_token_secret
             ) );*/
 /*            $this->setState('username', $record->username);
-            $this->setState('user_id', $record->user_id);
+            $this->setState('twitter_id', $record->twitter_id);
             $this->setState('oauth_token', $record->oauth_token);
             $this->setState('oauth_token_secret', $record->oauth_token_secret);*/
             $this->errorCode=self::ERROR_NONE;

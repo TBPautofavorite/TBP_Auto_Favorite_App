@@ -12,11 +12,11 @@ class TWUserIdentity extends UserIdentity
 	require_once('protected/config/main.php');
 	///////////////////////
 
-	public $user_id;
+	public $tiwtter_id;
 
 	public function __construct($twid)
 	{
-		$this->user_id = $twid;
+		$this->twitter_id = $twid;
 	}
 	/**
 	 * Authenticates a user.
@@ -28,7 +28,7 @@ class TWUserIdentity extends UserIdentity
 	 */
 	public function authenticate() 
 	{
-		$record = User::model()->findByAttributes(array('user_id' => $this->user_id));
+		$record = User::model()->findByAttributes(array('twitter_id' => $this->twitter_id));
 		if($record === null)
 			$this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
 		else {
@@ -36,7 +36,7 @@ class TWUserIdentity extends UserIdentity
 			$this->setState('admin', $record->admin);
 			$this->setPersistentStates(array(
                 'username' => $record->username,
-	            'user_id' => $record->user_id,
+	            'twitter_id' => $record->twitter_id,
 	            'oauth_token' => $record->oauth_token,
 	            'oauth_token_secret' => $record->oauth_token_secret
             ));
