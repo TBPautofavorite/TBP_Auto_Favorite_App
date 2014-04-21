@@ -128,12 +128,6 @@ class UserController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-
-
-		/*$username = User::model()->findByPK(1); //other numbers?
-		$this->username = $username->username;
-		$this->render('index', array('username'=>$this->username));*/
-
 	}
 
 	/**
@@ -179,12 +173,11 @@ class UserController extends Controller
 		}
 	}
 
-/*	public function getTwitterTokened($token,$secret) {
-		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	
-	}*/
-
 	public function actionTwitterCallBack() 
 	{   
+
+		require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
+    	require_once('./protected/config/config.php');
 
         /* If the oauth_token is old redirect to the connect page. */
         if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
@@ -192,25 +185,14 @@ class UserController extends Controller
         }
 
         /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
+        $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
         
-		// function _getTwitterTokened($token,$secret) {return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);}
-
-        $twitter = Yii::app()->twitter->getTwitterTokened(
-			Yii::app()->session['oauth_token'],
-			Yii::app()->session['oauth_token_secret']
-		);   
-
-        echo Yii::app()->session['oauth_token'];
-        echo Yii::app()->session['oauth_token_secret'];
-
         /* Request access tokens from twitter */
         $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
         
         /* Save the access tokens. Normally these would be saved in a database for future use. */
         Yii::app()->session['access_token'] = $access_token;
- 		
- 		echo"done";
-
+ 
         /* Remove no longer needed request tokens */
         unset(Yii::app()->session['oauth_token']);
         unset(Yii::app()->session['oauth_token_secret']);

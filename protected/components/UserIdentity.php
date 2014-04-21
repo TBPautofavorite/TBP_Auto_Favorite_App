@@ -60,7 +60,6 @@ public function authenticate()
         return $this->_id;
     }
 
-
 //=====================================================
 /* new attempt for twitter auth */
 	

@@ -32,6 +32,12 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 
+		/* Load required lib files. */
+		//session_start();
+		//require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
+		//require_once('./protected/config/config.php');
+
+
 		/* Build an image link to start the redirect process. */
 		$content = '<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>';
 		echo $content;
@@ -115,7 +121,7 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
-/*	public function actionTwitterLogin()
+	public function actionTwitterLogin()
 	{
 		//JUST TO BUILD A SESSION	
 		$isguest = Yii::app()->user->getIsGuest();
@@ -139,13 +145,16 @@ class SiteController extends Controller
 			$this->redirect(Yii::app()->homeUrl);
 		}
 	
-	}*/
+	}
 
     public function actionTwitterRedirect()
     {
     	require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
     	require_once('./protected/config/config.php');
+<<<<<<< HEAD
     	require_once('./protected/extensions/yiitwitteroauth/YiiTwitter.php');
+=======
+>>>>>>> parent of a2dca05... monday morning apr 21 commit
 
     	/* Build TwitterOAuth object with client credentials. */
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
@@ -169,6 +178,7 @@ class SiteController extends Controller
 		    echo 'Could not connect to Twitter. Refresh the page or try again later.';
 		}
     }
+<<<<<<< HEAD
 
     /**
      * login with twitter
@@ -198,4 +208,6 @@ class SiteController extends Controller
         }
     }
 
+=======
+>>>>>>> parent of a2dca05... monday morning apr 21 commit
 }

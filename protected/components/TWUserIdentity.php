@@ -11,12 +11,11 @@ class TWUserIdentity extends UserIdentity
 	require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
 	require_once('protected/config/config.php');
 	///////////////////////
-
-	public $user_id;
+	public $twitter_id;
 
 	public function __construct($twid)
 	{
-		$this->user_id = $twid;
+		$this->twitter_id = $twid;
 	}
 	/**
 	 * Authenticates a user.
@@ -28,7 +27,7 @@ class TWUserIdentity extends UserIdentity
 	 */
 	public function authenticate() 
 	{
-		$record = User::model()->findByAttributes(array('user_id' => $this->user_id));
+		$record = User::model()->findByAttributes(array('twitter_id' => $this->twitter_id));
 		if($record === null)
 			$this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
 		else {
@@ -44,10 +43,5 @@ class TWUserIdentity extends UserIdentity
 		}
 		return !$this->errorCode;
 	}
-
-/*	public function getTwitterTokened($token,$secret) 
-	{
-		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	
-	}*/
 
 }
