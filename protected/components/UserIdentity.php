@@ -7,7 +7,7 @@
  */
 ///
 require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-require_once('protected/config/main.php');
+require_once('protected/config/config.php');
 ///
 class UserIdentity extends CUserIdentity
 {
