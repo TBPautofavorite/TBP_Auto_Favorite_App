@@ -5,6 +5,11 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+
+define('CONSUMER_KEY', 'wtba5sUW4hYTduVrJi23tw');
+define('CONSUMER_SECRET', 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4');
+define('OAUTH_CALLBACK', 'http://www.tbpautofavorite.dev/index.php/user/twittercallback');
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Twitter Auto Favorite',
@@ -103,9 +108,7 @@ return array(
 
 );
 
-define('CONSUMER_KEY', 'wtba5sUW4hYTduVrJi23tw');
-define('CONSUMER_SECRET', 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4');
-define('OAUTH_CALLBACK', 'http://www.tbpautofavorite.dev/index.php/user/twittercallback');
+
 
 
 
