@@ -95,13 +95,17 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'jsantoku@gmail.com',
-		//'CONSUMER_KEY' => 'wtba5sUW4hYTduVrJi23tw',
-		//'CONSUMER_SECRET' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-		//'OAUTH_CALLBACK' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
-	),
+		'adminEmail'=>'jsantoku@gmail.com'
+        //'CONSUMER_KEY' => 'wtba5sUW4hYTduVrJi23tw',
+        //'CONSUMER_SECRET' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
+        //'OAUTH_CALLBACK' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
+	)
 
 );
+
+define('CONSUMER_KEY', 'wtba5sUW4hYTduVrJi23tw');
+define('CONSUMER_SECRET', 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4');
+define('OAUTH_CALLBACK', 'http://www.tbpautofavorite.dev/index.php/user/twittercallback');
 
 
 

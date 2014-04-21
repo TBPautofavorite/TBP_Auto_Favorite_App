@@ -9,7 +9,7 @@ class TWUserIdentity extends UserIdentity
 {
 	///////////////////////
 	require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-	require_once('protected/config/config.php');
+	require_once('protected/config/main.php');
 	///////////////////////
 
 	public $user_id;

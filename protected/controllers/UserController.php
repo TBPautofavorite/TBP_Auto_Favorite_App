@@ -128,12 +128,6 @@ class UserController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-
-
-		/*$username = User::model()->findByPK(1); //other numbers?
-		$this->username = $username->username;
-		$this->render('index', array('username'=>$this->username));*/
-
 	}
 
 	/**

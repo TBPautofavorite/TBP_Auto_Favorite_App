@@ -144,7 +144,7 @@ class SiteController extends Controller
     public function actionTwitterRedirect()
     {
     	require_once('./protected/extensions/yiitwitteroauth/twitteroauth.php');
-    	require_once('./protected/config/config.php');
+    	require_once('./protected/config/main.php');
     	require_once('./protected/extensions/yiitwitteroauth/YiiTwitter.php');
 
     	/* Build TwitterOAuth object with client credentials. */
@@ -169,33 +169,4 @@ class SiteController extends Controller
 		    echo 'Could not connect to Twitter. Refresh the page or try again later.';
 		}
     }
-
-    /**
-     * login with twitter
-     */
-/*    public function actionTwitter() {
-    	$config = array (
-    		'appId' => Yii::app()->params ['user_id'];
-    		'appUser' => Yii::app()->params ['username'];
-    		'oToken' => Yii::app()->params ['oauth_token'];
-    		'oTokenSecret' => Yii::app()->params ['oauth_token_secret'];
-    		)
-
-    	$twitter = new Twitter($config);
-
-    	print_r( $twitter->getUser() );
-    }*/
-
-    /**
-     * This is the action to handle external exceptions.
-     */
-    public function actionError() {
-        if( $error = Yii::app()->errorHandler->error ) {
-            if( Yii::app()->request->isAjaxRequest )
-                echo $error ['message'];
-            else
-                $this->render( 'error', $error );
-        }
-    }
-
 }
