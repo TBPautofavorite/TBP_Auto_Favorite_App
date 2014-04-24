@@ -7262,3 +7262,129 @@ REQUEST_URI=/index.php/user/twittercallback?oauth_token=fZNpiR3lY0eJqZzZgguAiFSc
 in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
 in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (186)
 in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/24 18:01:54 [error] [php] Undefined index: oauth_token (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php:131)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php/user/twittercallback?oauth_token=iGUXOlVYOWUwWoQpiYhIy82IkISQuvSWewKH75uw&oauth_verifier=L9B0414NL7LC6Apqgkbm9RsZvYENNTUxMhTGojo
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/extensions/yiitwitteroauth/twitteroauth.php (131)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (186)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/24 18:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:24:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:25:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/lighter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/lighter....')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/lighter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---
+2014/04/24 18:25:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://www.tbpautofavorite.dev/index.php/
+---

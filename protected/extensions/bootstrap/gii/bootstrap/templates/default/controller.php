@@ -1,6 +1,13 @@
 <?php
+/**
+ * This is the template for generating a controller class file for CRUD feature.
+ * The following variables are available in this template:
+ * - $this: the BootCrudCode object
+ */
+?>
+<?php echo "<?php\n"; ?>
 
-class UserController extends Controller
+class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass."\n"; ?>
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -15,7 +22,6 @@ class UserController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -24,9 +30,7 @@ class UserController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-
-//UNCOMMENT THE FOLLOWING TO CHANGE ACCESS RULES (CURRENTLY ANYBODY CAN ACCESS)	
-/*	public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -45,7 +49,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}*/
+	}
 
 	/**
 	 * Displays a particular model.
@@ -64,16 +68,16 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new User;
+		$model=new <?php echo $this->modelClass; ?>;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 		}
 
 		$this->render('create',array(
@@ -93,11 +97,11 @@ class UserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 		}
 
 		$this->render('update',array(
@@ -112,11 +116,17 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -124,7 +134,7 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
+		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -135,10 +145,10 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new User('search');
+		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
+		if(isset($_GET['<?php echo $this->modelClass; ?>']))
+			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -148,13 +158,11 @@ class UserController extends Controller
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
-	 * @throws CHttpException
+	 * @param integer the ID of the model to be loaded
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,59 +170,14 @@ class UserController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param CModel the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-
-	public function actionTwitterCallBack() {   
-		/* If the oauth_token is old redirect to the connect page. */
-        if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
-            Yii::app()->session['oauth_status'] = 'oldtoken';
-        }
-
-        /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
-        $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
-
-        /* Request access tokens from twitter */
-        $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
-// print_r($access_token);
-        /* Save the access tokens. Normally these would be saved in a database for future use. */
-        Yii::app()->session['access_token'] = $access_token;
- 
-        /* Remove no longer needed request tokens */
-        unset(Yii::app()->session['oauth_token']);
-        unset(Yii::app()->session['oauth_token_secret']);
- 
-        if (200 == $twitter->http_code) {
-            /* The user has been verified and the access tokens can be saved for future use */
-
-            Yii::app()->session['status'] = 'verified';
- 
-            //get an access twitter object
-            $twitter = Yii::app()->twitter->getTwitterTokened($access_token['oauth_token'],$access_token['oauth_token_secret']);
- 
-            //get user details
-            $twuser= $twitter->get("account/verify_credentials");
-            //get friends ids
-            $friends= $twitter->get("friends/ids");
-                        //get followers ids
-                $followers= $twitter->get("followers/ids");
-            //tweet
-                        $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
- 
-          
-
-        } else {
-            /* Save HTTP status for error dialog on connnect page.*/
-            $this->redirect(Yii::app()->homeUrl);
-        }
-
-    }
 }
