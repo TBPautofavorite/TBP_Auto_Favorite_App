@@ -21,7 +21,27 @@ class LoginController extends Controller {
 		);
 	}
 
+	public function actionIndex() {
+		// url here is http://www.tbpautofavorite.dev/index.php/Login/index
+		echo "Login Controller actionIndex";
 
+	}
+
+	public function actionLogout() {
+        Yii::app()->user->logout();
+        $this->redirect( Yii::app()->homeUrl );
+    }
+
+	public function actionTwitter() {
+		$config = array (
+			'appId' => Yii::app()->params['consumerKey'];
+			'secret' => Yii::app()->params['consumerSecret'];
+		);
+
+		$twitter = new Twitter($config);
+
+		print_r( $twitter->getUser() );
+	}
 
 }
 

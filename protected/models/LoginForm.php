@@ -8,17 +8,23 @@
 class LoginForm extends CFormModel
 {
 	public $username;
+
+	public $email;
+
+	public $password;
+
+
+	public $rememberMe;
+
+	private $_identity;
+
+
 	public $twitter_id;
 	public $oauth_token;
 	public $oauth_token_secret;
 	public $consumer_key;
 	public $consumer_secret;
 
-	
-	public $password;
-	public $rememberMe;
-
-	private $_identity;
 
 	/**
 	 * Declares the validation rules.
@@ -29,11 +35,24 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'required'),
+			array(
+				'username, password', 
+				'required'
+			),
 			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
+			// array(
+			// 	'rememberMe', 
+			// 	'boolean'
+			// ),
 			// password needs to be authenticated
-			array('password', 'authenticate'),
+			array('password', 
+				'authenticate'
+			),
+			array(
+				'username, email, password',
+				'length',
+				'max' => 32
+			)
 		);
 	}
 
@@ -43,6 +62,9 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
+			'username' => 'Username',
+			'email' => 'Email address',
+			'password' => 'Password',
 			'rememberMe'=>'Remember me next time',
 		);
 	}
@@ -51,7 +73,7 @@ class LoginForm extends CFormModel
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
 	 */
-	public function authenticate($attribute,$params)
+	/*public function authenticate($attribute,$params)
 	{
 		if(!$this->hasErrors())
 		{
@@ -59,7 +81,7 @@ class LoginForm extends CFormModel
 			if(!$this->_identity->authenticate())
 				$this->addError('password','Incorrect username or password.');
 		}
-	}
+	}*/
 
 	/**
 	 * Logs in the user using the given username and password in the model.
@@ -85,17 +107,11 @@ class LoginForm extends CFormModel
 
 	public function loginWithTwitter() 
 	{
+        echo "login with twitter";
         $config = array (
-        		'oauth_token' => Yii::app()->params ['oauth_token'],
-        		'oauth_token_secret' => Yii::app()->params ['oauth_token_secret'],
-        		'username' => Yii::app()->params ['username'],
-        		'twitter_id' => Yii::app()->params ['twitter_id'],
-        		'comsumer_key' => Yii::app()->params ['consumer_key'],
-        		'comsumer_secret' => Yii::app()->params ['consumer_secret'],
+        		'consumerKey' => Yii::app()->params ['consumerKey'],
+        		'consumerSecret' => Yii::app()->params ['consumerSecret']
 
-                // 'appId' => Yii::app()->params ['fbAppId'],
-                // 'secret' => Yii::app()->params ['fbAppSecret'],
-                // 'fileUpload' => false  // optional
         );
         
         $twitter = new Twitter($config);

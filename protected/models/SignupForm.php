@@ -9,6 +9,8 @@ class SignupForm extends CFormModel
 {
 	public $username;
 
+	public $email;
+
 	public $password;
 
 	public $twitter_id;
@@ -34,7 +36,8 @@ class SignupForm extends CFormModel
 	{
 		return array (
                 array (
-                        'username, twitter_id, oauth_token, oauth_token_secret, consumer_key, consumer_secret',
+                        //'username, email, password, twitter_id, oauth_token, oauth_token_secret, consumer_key, consumer_secret',
+                        'username, email, password',
                         'required' 
                 ),
                 array (
@@ -46,45 +49,34 @@ class SignupForm extends CFormModel
                         'unique' 
                 ),
                 array (
-                        'username, twitter_id',
+                        'email, password',
                         'length',
-                        'max' => 64 
+                        'max' => 32 
                 ),
                 array (
-                        'username',
+                        'username, twitter_id',
                         'length',
-                        'max' => 64 
-                )
+                        'max' => 32 
+                ),
+
         );
 	}
-
-
-    /**
-     * Authenticates the password. This is the 'authenticate' validator as declared in rules().
-     */
-    public function authenticate($attribute, $params) {
-        if( $this->password != $this->confirm_password )
-            $this->addError( 'confirm_password', 'Passwords are not same.' );
-    }
 
     /**
      * Declares attribute labels.
      */
     public function attributeLabels() {
         return array (
+                'username' => 'Username',
                 'email' => 'Email address',
-                'full_name' => 'Full Name',
                 'password' => 'Password',
-                'confirm_password' => 'Confirm Password',
-                'picture' => 'Picture URL',
-                'user_type' => 'What Are You?' 
         );
     }
 
     /**
      * sign up
      */
-    public function signup() {
+    /*public function signup() {
         $user = new User();
         
         $user->attributes = $_POST ['SignupForm'];
@@ -95,19 +87,9 @@ class SignupForm extends CFormModel
         }
         
         $this->_identity = new UserIdentity( $user->email, $user->password );
-    }
+    }*/
 
     //=================================================
-
-	/**
-	 * Declares attribute labels.
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'rememberMe'=>'Remember me next time',
-		);
-	}
 
 	/**
 	 * Authenticates the password.

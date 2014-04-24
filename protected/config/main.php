@@ -6,10 +6,6 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 
-define('CONSUMER_KEY', 'wtba5sUW4hYTduVrJi23tw');
-define('CONSUMER_SECRET', 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4');
-define('OAUTH_CALLBACK', 'http://www.tbpautofavorite.dev/index.php/user/twittercallback');
-
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Twitter Auto Favorite',
@@ -21,6 +17,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.extensions.*', //added this to import the libraries we've added
 	),
 
 	'modules'=>array(
@@ -84,30 +81,37 @@ return array(
 				*/
 			),
 		),
-		
-		/* added for yii twitter extension */
-		//For Single Sign ON (SSO)
-		'twitter' => array(
-			'class' => 'ext.yiitwitteroauth.YiiTwitter',
-            'consumer_key' => 'wtba5sUW4hYTduVrJi23tw',
-            'consumer_secret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-            'callback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
-			)
 
+		'twitter'=>array(
+			'class' => 'ext.yiitwitteroauth.YiiTwitter',
+			//these are defined below within the params array
+			'consumer_key' => Yii::app()->params['consumerKey'], 
+			'consumer_secret' => Yii::app()->params['consumerSecret'],
+			'callback' => Yii::app()->params['oauthCallback']
+		)
 	),
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'jsantoku@gmail.com'
-	/* use these later on insead of other two name formats XXXX_XXXX and xxxx_xxxx */
-//	    'adminEmail'=>'jsantoku@gmail.com',
-//      'consumerKey' => 'wtba5sUW4hYTduVrJi23tw', 
-//      'consumerSecret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-//      'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
-
+	    'adminEmail'=>'jsantoku@gmail.com',
+	    // these are for the twitter app
+	    'class' => 'ext.yiitwitteroauth.YiiTwitter',
+        'consumerKey' => 'wtba5sUW4hYTduVrJi23tw', 
+        'consumerSecret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
+        'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
 	)
+
+	/* added for requiring users to login to access almost all of the site's content */
+	//This will apply to entire application, not a specific component or module
+	//This code associates one class with the onBeginRequest behavior, so every time a request is made, an instance of the RequireLogin class should be created.
+/*	'behaviors' => array(
+	    'onBeginRequest' => array(
+	        'class' => 'application.components.RequireLogin'
+	    )
+	),*/
+
 
 );
 

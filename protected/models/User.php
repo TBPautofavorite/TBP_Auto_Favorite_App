@@ -35,7 +35,7 @@ class User extends CActiveRecord
 				'required'
 			),
 			array(
-				'username, email, password, twitter_id', 
+				'username, email, password', 
 				'length', 
 				'max'=>32
 			),
@@ -52,7 +52,7 @@ class User extends CActiveRecord
 				'on'=>'search'
 			),*/
 			array(
-				'id, username, email, password, twitter_id', 
+				'id, username, email, password', 
 				'safe', 
 				'on'=>'search'
 			),
@@ -78,7 +78,9 @@ class User extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'username' => 'Username',
-			'twitter_id' => 'User',
+			'email' => 'Email',
+			'password' => 'Password',
+			'twitter_id' => 'Twitter Id',
 			'oauth_token' => 'Oauth Token',
 			'oauth_token_secret' => 'Oauth Token Secret',
 		);
@@ -104,6 +106,8 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('password',$this->password,true);
 		$criteria->compare('twitter_id',$this->twitter_id,true);
 		$criteria->compare('oauth_token',$this->oauth_token,true);
 		$criteria->compare('oauth_token_secret',$this->oauth_token_secret,true);

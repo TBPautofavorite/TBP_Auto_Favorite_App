@@ -25,6 +25,7 @@ class SignupController extends Controller {
 	 * This is the default 'index' action that is invoked when an action is not explicitly requested by users.
 	 */
 	public function actionIndex() {
+		// url here is http://www.tbpautofavorite.dev/index.php/Signup/index
 		if( isset(Yii::app()->user->id) ) {
 			$this->redirect( '/' ); //what is the '/' for??
 		}

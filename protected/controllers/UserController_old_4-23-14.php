@@ -173,22 +173,81 @@ class UserController extends Controller
 		}
 	}
 
-	public function actionTwitterCallBack() {   
-		/* If the oauth_token is old redirect to the connect page. */
+	public function actionTwitterCallBack() 
+	{   
+		/* some debugging */
+		//echo "$ _ REQUEST['oauth_token']: " . $_REQUEST['oauth_token'] . "<br>";
+		//echo "$ _ REQUEST['oauth_verifier']: " . $_REQUEST['oauth_verifier'] . "<br>";
+		//echo "Yii::app()->session['oauth_token']: " . Yii::app()->session['oauth_token'] . "<br>";
+
+	// 	//JUST TO BUILD A SESSION	
+	// 	$isguest = Yii::app()->user->getIsGuest();
+	// 	//JUST TO BUILD A SESSION		
+		
+	// 	//grab twitter object and request token
+	// 	$twitter = Yii::app()->twitter->getTwitter();	
+	// 	$request_token = $twitter->getRequestToken();
+		
+	// 	//set some session info
+	// 	$_SESSION['oauth_token'] = $token = $request_token['oauth_token'];
+	// 	$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+	// 	//$token = OAuthUtil::parse_parameters($_REQUEST);
+	// 	//echo $token['oauth_token_secret'];
+	// 	//echo $token['oauth_token'];
+	// 	//echo $token;
+	// $connection = new TwitterOAuth(Yii::app()->params['consumerKey'], Yii::app()->params['consumerSecret'], $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+	// //print_r( Yii::app()->components['twitter']);
+	// //echo "<br>  <br>";
+	// //echo Yii::app()->components[Yii::app()->twitter['consumer_key']];
+	// //echo "<br> <br>";
+	// //$access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
+	// //$_SESSION['access_token'] = $access_token;
+	// //echo "print_r($ twitter): " . "<br>" ;
+	// //print_r($twitter);
+
+
+	// 	if($twitter->http_code == 200){
+	// 		//get twitter connect url
+	// 		$url = $twitter->getAuthorizeURL($token);
+	// 		//send them
+
+	// 		//PROBLEM WITH THIS LINE:
+	// 		$this->redirect($url);
+	// 		//echo"if";
+
+	// 	} else{
+	// 		//error here
+	// 		$this->redirect(Yii::app()->homeUrl);
+	// 		//echo"else";
+
+		}
+
+        /* If the oauth_token is old redirect to the connect page. */
         if (isset($_REQUEST['oauth_token']) && Yii::app()->session['oauth_token'] !== $_REQUEST['oauth_token']) {
             Yii::app()->session['oauth_status'] = 'oldtoken';
         }
 
         /* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
-        $twitter = Yii::app()->twitter->getTwitterTokened(Yii::app()->session['oauth_token'], Yii::app()->session['oauth_token_secret']);   
- 
+        
+		// function _getTwitterTokened($token,$secret) {return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);}
+
+        $twitter = Yii::app()->twitter->getTwitterTokened(
+			Yii::app()->session['oauth_token'],
+			Yii::app()->session['oauth_token_secret']
+		);   
+
+        echo Yii::app()->session['oauth_token'];
+        echo Yii::app()->session['oauth_token_secret'];
+
         /* Request access tokens from twitter */
         $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
- 
+
         /* Save the access tokens. Normally these would be saved in a database for future use. */
         Yii::app()->session['access_token'] = $access_token;
- 
-        /* Remove no longer needed request tokens */
+ 		
+ 		echo"done";
+
+         Remove no longer needed request tokens 
         unset(Yii::app()->session['oauth_token']);
         unset(Yii::app()->session['oauth_token_secret']);
  
@@ -203,16 +262,15 @@ class UserController extends Controller
             $twuser= $twitter->get("account/verify_credentials");
             //get friends ids
             $friends= $twitter->get("friends/ids");
-                        //get followers ids
-                $followers= $twitter->get("followers/ids");
+            //get followers ids
+            $followers= $twitter->get("followers/ids");
             //tweet
-                        $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
+            $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
  
         } else {
             /* Save HTTP status for error dialog on connnect page.*/
             //header('Location: /clearsessions.php');
             $this->redirect(Yii::app()->homeUrl);
         }
-
     }
 }

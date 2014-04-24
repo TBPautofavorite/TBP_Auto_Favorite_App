@@ -4,13 +4,13 @@ class YiiTwitter extends CApplicationComponent
 {
 
 	//The Twitter Apps key, set in config.
-	public $consumer_key = 'wtba5sUW4hYTduVrJi23tw';
+	public $consumer_key;
 	
 	//The Twitter Apps secret key, set in config.	
-	public $consumer_secret = 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4';
+	public $consumer_secret;
 	
 	//The call back url for twitter
-	public $callback = 'http://www.tbpautofavorite.dev/index.php/user/twittercallback';	
+	public $callback;	
 	
 	//Can be set in config to not load OAuth.php
 	public $load_oauth = true;	
