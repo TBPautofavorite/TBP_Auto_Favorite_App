@@ -209,7 +209,10 @@ class UserController extends Controller
             //tweet
                         $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
  
-          
+        
+        $user = new TWUserIdentity();
+        print_r($user);
+
 
         } else {
             /* Save HTTP status for error dialog on connnect page.*/

@@ -7,10 +7,6 @@
  */
 class TWUserIdentity extends UserIdentity
 {
-	///////////////////////
-	//require_once('protected/extensions/yiitwitteroauth/twitteroauth.php');
-	//require_once('protected/config/main.php');
-	///////////////////////
 
 	public $twitter_id;
 
@@ -45,9 +41,10 @@ class TWUserIdentity extends UserIdentity
 		return !$this->errorCode;
 	}
 
-/*	public function getTwitterTokened($token,$secret) 
-	{
-		return new TwitterOAuth($this->consumer_key,$this->consumer_secret,$token,$secret);	
-	}*/
+    //Override the CUserIdentity::getId() method to return the _id property because the default implementation returns the username as the ID
+    //public function getId()
+    //{
+    //    return $this->_id;
+    //}
 
 }
