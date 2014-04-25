@@ -58,6 +58,15 @@
                                         array('label'=>'Home', 'url'=>'/', 'active'=>true),
                                         array('label'=>'About', 'url'=>'/index.php/about'),
                                         array('label'=>'Contact', 'url'=>'/index.php/contact'),
+                                        /* this is supposed to be for a sign-in button in the navbar */
+                                        //array('label'=>CHtml::image(Yii::app()->request->baseUrl.'./images/lighter.png', 'Sign in with Twitter', array('width' => '151', 'height' => '24')),'url'=>'/index.php/site/twitterredirect'),
+                                        
+                                        /* login through nav bar */
+                                        array('label'=>'Login', 'url'=>array('/site/twitterredirect'), 'visible'=>Yii::app()->user->isGuest),
+                                        
+                                        /* display username in navbar after user has logged in */
+                                        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                                        
     /*                                    array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
                                             array('label'=>'Action', 'url'=>'#'),
                                             array('label'=>'Another action', 'url'=>'#'),
@@ -69,8 +78,8 @@
                                         )),*/
                                     ),
                                 ),
-    /*                            '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
-                                array(
+                                //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
+    /*                            array(
                                     'class'=>'bootstrap.widgets.TbMenu',
                                     'htmlOptions'=>array('class'=>'pull-right'),
                                     'items'=>array(
