@@ -1,0 +1,55 @@
+/* Layout
+================================= */
+
+body {
+	padding-top: 70px;
+}
+.container {
+	max-width: 1000px;
+}
+
+.navbar {
+	margin: 0 0;
+}
+
+.copyright {
+	text-align: center;
+}
+
+@media screen and (max-width: 767px){
+    .copyright {
+    	text-align: left;
+   	}
+}
+
+/* Layout
+================================= */
+
+
+
+
+/* Images
+================================= */
+
+
+
+
+/* Jumbotron
+================================= */
+
+
+
+/* Link Section Title
+================================= */
+
+
+
+
+/* Logos & Icons
+================================= */
+
+
+
+
+/* Media Queries
+================================= */

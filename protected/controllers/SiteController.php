@@ -39,10 +39,10 @@ class SiteController extends Controller
 
 		$this->render('index');
 		/* Build an image link to start the redirect process. */
-		$content = '<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>
-					<br/>
-					<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/sign_up_with_twitter.png" alt="Sign up with Twitter"/></a>';
-		echo $content;
+		//$content = '<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>
+		//			<br/>
+		//			<a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="./images/sign_up_with_twitter.png" alt="Sign up with Twitter"/></a>';
+		//echo $content;
 
 
 	}

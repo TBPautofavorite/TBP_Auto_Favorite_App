@@ -12,7 +12,10 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Twitter Auto Favorite',
+	'name'=>'TBP Automated Social Marketing',
+	
+	// to user Bootstrap in the application
+	'theme'=>'bootstrap',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -23,9 +26,6 @@ return array(
 		'application.components.*',
 		'application.extensions.*', //added this to import the libraries we've added
 	),
-	
-	// to user Bootstrap in the application
-	'theme'=>'bootstrap',
 	
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
@@ -110,7 +110,8 @@ return array(
 	    'class' => 'ext.yiitwitteroauth.YiiTwitter',
         'consumerKey' => 'wtba5sUW4hYTduVrJi23tw', 
         'consumerSecret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
-        'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback'
+        'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback',
+        'companyName'=>'John DiBaggio',
 	)
 
 	/* added for requiring users to login to access almost all of the site's content */

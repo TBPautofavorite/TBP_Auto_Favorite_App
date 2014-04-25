@@ -203,16 +203,16 @@ class UserController extends Controller
             //get user details
             $twuser= $twitter->get("account/verify_credentials");
             //get friends ids
-            $friends= $twitter->get("friends/ids");
-                        //get followers ids
-                $followers= $twitter->get("followers/ids");
+            //$friends= $twitter->get("friends/ids");
+            //get followers ids
+            //$followers= $twitter->get("followers/ids");
             //tweet
-                        $result=$twitter->post('statuses/update', array('status' => "Tweet message"));
+            //$result=$twitter->post('statuses/update', array('status' => "Tweet message from php"));
  
-        
+        ////////
         $user = new TWUserIdentity();
         print_r($user);
-
+        ////////
 
         } else {
             /* Save HTTP status for error dialog on connnect page.*/
