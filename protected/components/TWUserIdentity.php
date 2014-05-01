@@ -5,14 +5,26 @@
  * It contains the authentication method that checks if the provided
  * data can identity the user.
  */
-class TWUserIdentity extends UserIdentity
+class TWUserIdentity extends CUserIdentity
 {
 
-	public $twitter_id;
+	public $username;
+	public $password;
 
-	public function __construct($twid)
+	// don't have UserIdentity anymore, which already had a constructor function for $username and $password from CUserIdentity
+	public $twitter_id;
+	public $oauth_token;
+	public $oauth_token_secret;
+
+	public $email; //we'll have users add in an email address after authenticating with Twitter
+
+	public function __construct($twid, $userHandle, $userPass, $oToken, $oTokenSecret)
 	{
 		$this->twitter_id = $twid;
+		$this->username = $userHandle;
+		$this->password = $userPass;
+		$this->oauth_token = $oToken;
+		$this->oauth_token_secret = $oTokenSecret;
 	}
 	/**
 	 * Authenticates a user.

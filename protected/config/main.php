@@ -45,8 +45,8 @@ return array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>true, // enable cookie-based authentication
+			//'loginUrl' => array('/user/login'),
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -54,7 +54,7 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>'=>'<controller>/list',
-                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //to allow for editing and changing passwords
                 '<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
 			),
@@ -111,6 +111,7 @@ return array(
         'consumerKey' => 'wtba5sUW4hYTduVrJi23tw', 
         'consumerSecret' => 'hj3vwsH3LSeXDooZnR3GhlhYTCOtiYkdcspLlXW4',
         'oauthCallback' => 'http://www.tbpautofavorite.dev/index.php/user/twittercallback',
+        // current company name (used at least in the footer)
         'companyName'=>'John DiBaggio',
 	)
 

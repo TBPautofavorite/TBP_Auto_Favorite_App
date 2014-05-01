@@ -11,13 +11,14 @@
 <?php //echo $this->getFooter(); ?>
 
 <div class="container">     
-
 	<div>
 		<h1><?php echo $this->pageTitle=Yii::app()->name; ?></h1>
 		<p>A marketing tool that automatically favorites tweets matching search tags for users of the app</p>
 	</div>
 	<div>
-		<p><a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="../images/lighter.png" alt="Sign in with Twitter"/></a></p>
+		<!-- "sign in with twitter" button -->
+		<!-- <p><a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="../images/lighter.png" alt="Sign in with Twitter"/></a></p> -->
+		<!-- "sign up for twitter" button -->
 		<p><a href="http://www.tbpautofavorite.dev/index.php/site/twitterredirect"><img src="../images/sign_up_with_twitter.png" alt="Sign up with Twitter"/></a></p>
 	</div>
 </div>

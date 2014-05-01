@@ -8649,3 +8649,250 @@ Stack trace:
 REQUEST_URI=/index.php
 HTTP_REFERER=http://www.tbpautofavorite.dev/index.php
 ---
+2014/04/28 15:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://tbpautofavorite.dev/
+---
+2014/04/28 15:59:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('contact/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/contact
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/about
+---
+2014/04/28 15:59:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('contact/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/contact
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/about
+---
+2014/04/28 15:59:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/contact
+---
+2014/04/28 17:05:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+---
+2014/04/28 17:05:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('login')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/login')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/login
+---
+2014/04/28 17:05:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:05:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/tbp-topmenu-styles.css".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('css/tbp-topmenu...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/css/tbp-topmenu-styles.css
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:05:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:05:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('login')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/login')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/login
+---
+2014/04/28 17:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/tbp-topmenu-styles.css".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('css/tbp-topmenu...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/css/tbp-topmenu-styles.css
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:05:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/contact
+---
+2014/04/28 17:05:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('contact/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/contact
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/about
+---
+2014/04/28 17:05:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/contact
+---
+2014/04/28 17:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(270): CController->missingAction('login')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/login')
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/user/login
+---
+2014/04/28 17:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/tbp-topmenu-styles.css".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('css/tbp-topmenu...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/css/tbp-topmenu-styles.css
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sign_up_with_twitter.png".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('images/sign_up_...')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/sign_up_with_twitter.png
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/user/login
+---
+2014/04/28 17:06:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('about/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/contact
+---
+2014/04/28 17:06:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact/list".' in /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('contact/list')
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/contact
+HTTP_REFERER=http://tbpautofavorite.dev/index.php/about
+---
+2014/04/29 19:52:24 [error] [php] include(TWUserIdentity.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php(213): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionTwitterCallBack()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#11 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php/user/twittercallback?oauth_token=Rj0bK0FRmT7HCHKBDxUDNOLpy254bOAIqqjtD11h1A&oauth_verifier=argTA8dEh3DDbYcAN9b0EBGLlD8Rg7c18W5zKQE13A
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (213)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/29 19:56:51 [error] [php] include(TWUserIdentity.php): failed to open stream: No such file or directory (/Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/YiiBase.php:427)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php(213): spl_autoload_call()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionTwitterCallBack()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#11 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php/user/twittercallback?oauth_token=GCD3K3vPGZi3lgGlQE8ZUXpf0PuPjw6VdxwFiDrnRI8&oauth_verifier=cR0csblelWb49jQ1mXsXv3IL709UXJNZLhqk7aWSnlw
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (213)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
+2014/04/29 19:57:50 [error] [php] Missing argument 1 for TWUserIdentity::__construct(), called in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php on line 213 and defined (/Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/components/TWUserIdentity.php:21)
+Stack trace:
+#0 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#2 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#5 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#7 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#8 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#9 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Volumes/Mac HDD Storage/MAMP_htdocs/YiiRoot/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php/user/twittercallback?oauth_token=kv2WyYGT1R4ylE9XbKreXcIGJeDx11hmakEyc5j7WM&oauth_verifier=Z9CzasUxGcsEZ7PBZyfB7och3PEdPYixKV0TUT45E
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/components/TWUserIdentity.php (21)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/protected/controllers/UserController.php (213)
+in /Volumes/Mac HDD Storage/MAMP_htdocs/twitter_auto_favorite_app/index.php (19)
