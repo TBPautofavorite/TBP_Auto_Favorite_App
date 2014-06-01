@@ -18,11 +18,19 @@ class TWUserIdentity extends CUserIdentity
 
 	public $email; //we'll have users add in an email address after authenticating with Twitter
 
-	public function __construct($twid, $userHandle, $userPass, $oToken, $oTokenSecret)
+/*	public function __construct($twid, $userHandle, $userPass, $oToken, $oTokenSecret) 
 	{
 		$this->twitter_id = $twid;
 		$this->username = $userHandle;
 		$this->password = $userPass;
+		$this->oauth_token = $oToken;
+		$this->oauth_token_secret = $oTokenSecret;
+	}*/
+	public function __construct($twid, $userHandle, $oToken, $oTokenSecret) 
+	{
+		$this->twitter_id = $twid;
+		$this->username = $userHandle;
+		//$this->password = $userPass;
 		$this->oauth_token = $oToken;
 		$this->oauth_token_secret = $oTokenSecret;
 	}

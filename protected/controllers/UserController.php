@@ -184,7 +184,7 @@ class UserController extends Controller
 
         /* Request access tokens from twitter */
         $access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);
-// print_r($access_token);
+ 	// print_r($access_token);
         /* Save the access tokens. Normally these would be saved in a database for future use. */
         Yii::app()->session['access_token'] = $access_token;
  
@@ -210,8 +210,8 @@ class UserController extends Controller
             //$result=$twitter->post('statuses/update', array('status' => "Tweet message from php"));
  
         ////////
-        $user = new TWUserIdentity();
-        print_r($user);
+        $user = new TWUserIdentity($access_token['user_id'], $access_token['screen_name'], $access_token['oauth_token'], $access_token['oauth_token_secret']);
+    // print_r($user);
         ////////
 
         } else {
