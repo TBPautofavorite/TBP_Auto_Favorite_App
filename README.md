@@ -1,9 +1,7 @@
 TBP Auto Favorite Twitter Aapp
-
-===============
+=============================
 
 A web app to run continuously and automatically favorite tweets matching searchtags set by users of the app 
-
 
 Yii Web Programming Framework
 =============================
@@ -11,7 +9,6 @@ Yii Web Programming Framework
 Thank you for choosing Yii - a high-performance component-based PHP framework.
 The Yii Developer Team
 http://www.yiiframework.com
-
 
 INSTALLATION
 ------------
@@ -58,18 +55,17 @@ You can access it with the following URL:
 
         http://hostname/YiiPath/testdrive/index.php
 
-
 WHAT's NEXT
 -----------
 
-With the token credentials we build a new TwitterOAuth object.
+With the token credentials build a new TwitterOAuth object:
 
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $token_credentials['oauth_token'],
     $token_credentials['oauth_token_secret']);
 
-And finally we can make requests authenticated as the user. You can GET, POST, and DELETE API
+Make requests authenticated as the user, by using GET, POST, and DELETE API
 methods. Directly copy the path from the API documentation and add an array of any parameter
-you wish to include for the API method such as curser or in_reply_to_status_id.
+to include for the API method such as curser or in_reply_to_status_id.
 
     $account = $connection->get('account/verify_credentials');
     $status = $connection->post('statuses/update', array('status' => 'Text of status here', 'in_reply_to_status_id' => 123456));
