@@ -9,6 +9,8 @@ Yii Web Programming Framework
 =============================
 
 Thank you for choosing Yii - a high-performance component-based PHP framework.
+The Yii Developer Team
+http://www.yiiframework.com
 
 
 INSTALLATION
@@ -25,7 +27,6 @@ directory. You shall see the following files and directories:
       README               this file
       UPGRADE              upgrading instructions
 
-
 REQUIREMENTS
 ------------
 
@@ -37,7 +38,6 @@ Please access the following URL to check if your Web server reaches
 the requirements by Yii, assuming "YiiPath" is where Yii is installed:
 
       http://hostname/YiiPath/requirements/index.php
-
 
 QUICK START
 -----------
@@ -61,16 +61,6 @@ You can access it with the following URL:
 
 WHAT's NEXT
 -----------
-
-Please visit the project website for tutorials, class reference
-and join discussions with other Yii users.
-
-
-
-The Yii Developer Team
-http://www.yiiframework.com
-
-
 
 With the token credentials we build a new TwitterOAuth object.
 
